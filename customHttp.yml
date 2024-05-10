@@ -3,18 +3,18 @@ customHeaders:
     headers:
       - key: 'Strict-Transport-Security'
         value: 'max-age=31536000; includeSubDomains'
-      - key: 'X-Frame-Options'
-        value: 'SAMEORIGIN'
+      # - key: 'X-Frame-Options'
+      #   value: 'SAMEORIGIN'
       - key: 'X-XSS-Protection'
         value: '1; mode=block'
       - key: 'X-Content-Type-Options'
         value: 'nosniff'
       - key: 'Content-Security-Policy'
-        value: "default-src 'self' https://assets.lukecreated.com http://assets.lukecreated.com; style-src 'self' https://assets.lukecreated.com http://assets.lukecreated.com https://fonts.googleapis.com http://www.w3.org https://www.w3.org 'unsafe-inline'; script-src 'self' https://assets.lukecreated.com http://assets.lukecreated.com 'unsafe-inline'; font-src 'self' https://assets.lukecreated.com http://assets.lukecreated.com data:; img-src 'self' https://assets.lukecreated.com http://assets.lukecreated.com data:"
+        value: "default-src 'self' https://assets.lukecreated.com; style-src 'self' https://assets.lukecreated.com  https://fonts.googleapis.com https://www.w3.org 'unsafe-inline'; font-src 'self' https://assets.lukecreated.com data:; img-src 'self' https://assets.lukecreated.com data:; object-src  'none';"
       - key: 'Access-Control-Allow-Origin'
         value: '*'
       - key: 'Access-Control-Allow-Methods'
-        value: 'OPTIONS, POST, GET'
+        value: 'GET'
       - key: 'Access-Control-Allow-Headers'
         value: 'Content-Type, Authorization'
       - key: 'Access-Control-Allow-Credentials'
