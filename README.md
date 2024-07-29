@@ -1,4 +1,4 @@
-# self-lukecreated: Personal website `LukeCreated`
+# Personal website `LukeCreated`
 
 Personal Project: `LukeCreated` website
 

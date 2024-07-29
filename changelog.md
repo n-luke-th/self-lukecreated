@@ -8,6 +8,8 @@ Created on May 22, 2023
 
 ## Changelog
 
+### Serie 1
+
 - Initial Create: initial created on May 22, 2023 -> __0.01__
 - Initial Development: initial developed on May 28, 2023 -> __0.1__
 - Initial Development: lang changer + color theme implemented on May 28, 2023 -> __0.11__
@@ -61,4 +63,8 @@ Created on May 22, 2023
 - Minor Changes: Attempted to fix custom font not work on moblie on December 10, 2023 -> __0.4765__
 - Minor Changes: Fixed custom font not work on moblie on December 10, 2023 -> __0.4767__
 - Minor Changes: Added services and logos + overall improvement on January 11, 2024 -> __0.48__
-- Minor Changes: Updated CSP + add more info + overall improvements on May 10, 2024 -> __0.49__
+- Minor Changes: Updated Content Secure policy (CSP) + add more info + overall improvements on May 10, 2024 -> __0.49__
+
+### Serie 2
+
+- Initial Development: Initialized Serie 2 development on May 30, 2024 -> __0.0.0__
