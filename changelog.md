@@ -67,4 +67,4 @@ Created on May 22, 2023
 
 ### Serie 2
 
-- Initial Development: Initialized Serie 2 development on May 30, 2024 -> __0.0.0__
+- Initial Development: Initialized Serie 2 development on July 30, 2024 -> __0.0.0__
