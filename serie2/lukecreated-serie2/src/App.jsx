@@ -1,40 +1,39 @@
-import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
-import './themes/LukeCreated-dark.css'
-
-
-
-
-
-const pages = [
-  { id: 1, content: <h1>Page 1 Content</h1> },
-  { id: 2, content: <h1>Page 2 Content</h1> },
-  { id: 3, content: <h1>Page 3 Content</h1> },
-];
+import "./App.css";
+import Book from "./components/book";
+import Scaffold from "./primitives/scaffold";
+import StyledButton from "./primitives/button";
+import NavBar from "./primitives/navBar";
+import { useState, useEffect } from "react";
+import { createLightTheme, createDarkTheme } from "./styles/stitches.config";
+import { globalStyles } from "./styles/globalStyles";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [theme, setTheme] = useState(createLightTheme());
 
-  const nextPage = () => {
-    setCurrentPage((prev) => (prev < pages.length - 1 ? prev + 1 : prev));
+  useEffect(() => {
+    const initialTheme = "light";
+    setTheme(initialTheme === "dark" ? createDarkTheme() : createLightTheme());
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) =>
+      prevTheme.className === "light-theme"
+        ? createDarkTheme()
+        : createLightTheme()
+    );
   };
 
-  const prevPage = () => {
-    setCurrentPage((prev) => (prev > 0 ? prev - 1 : prev));
-  };
+  // Apply global styles
+  globalStyles();
 
   return (
-    <div className="App">
-      <div className="page-content">
-        {pages[currentPage].content}
-      </div>
-      <div className="navigation">
-        <button onClick={prevPage} disabled={currentPage === 0} className='dark'>Previous</button>
-        <button onClick={nextPage} disabled={currentPage === pages.length - 1}>Next</button>
-      </div>
-    </div>
+    <Scaffold className={theme}>
+      <NavBar></NavBar>
+      <br />
+
+      <Book></Book>
+      <StyledButton onClick={toggleTheme}>Toggle Theme</StyledButton>
+    </Scaffold>
   );
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "lukecreated-serie2",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/krub": "^5.0.13",
+    "@fontsource/ma-shan-zheng": "^5.0.12",
     "@heroicons/react": "^2.1.5",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-navigation-menu": "^1.2.0",
