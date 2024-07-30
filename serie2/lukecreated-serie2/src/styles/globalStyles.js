@@ -1,6 +1,6 @@
 import { globalCss } from "./stitches.config";
 // import "@fontsource/krub/200.css"; // ex light
-import "@fontsource/krub/300.css"; // light
+// import "@fontsource/krub/300.css"; // light
 import "@fontsource/krub/400.css"; // regular
 // import "@fontsource/krub/500.css"; // medium
 // import "@fontsource/krub/600.css"; // semi bold
@@ -16,6 +16,7 @@ import "@fontsource/ma-shan-zheng";
 export const globalStyles = globalCss({
   "*": {},
   body: {
+    overflow: "hidden",
     margin: 0,
     padding: 0,
     boxSizing: "border-box",

@@ -1,13 +1,19 @@
 import "./App.css";
 import Book from "./components/book";
+import NavBar from "./components/navBar";
+import Footer from "./components/footer";
 import Scaffold from "./primitives/scaffold";
-import StyledButton from "./primitives/button";
-import NavBar from "./primitives/navBar";
 import { useState, useEffect } from "react";
 import { createLightTheme, createDarkTheme } from "./styles/stitches.config";
 import { globalStyles } from "./styles/globalStyles";
+import PropTypes from "prop-types";
 
 function App() {
+  Scaffold.propTypes = {
+    className: PropTypes.object,
+    children: PropTypes.node.isRequired,
+  };
+
   const [theme, setTheme] = useState(createLightTheme());
 
   useEffect(() => {
@@ -28,11 +34,11 @@ function App() {
 
   return (
     <Scaffold className={theme}>
-      <NavBar></NavBar>
+      <NavBar toggleTheme={toggleTheme} />
       <br />
 
-      <Book></Book>
-      <StyledButton onClick={toggleTheme}>Toggle Theme</StyledButton>
+      <Book />
+      <Footer></Footer>
     </Scaffold>
   );
 }

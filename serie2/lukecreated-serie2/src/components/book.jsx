@@ -1,4 +1,5 @@
 import StyledButton from "../primitives/button";
+import BookNavigator from "../primitives/bookNavigator";
 import { useState } from "react";
 const pages = [
   { id: 1, content: <h1>Page 1 Content 你好</h1> },
@@ -21,6 +22,7 @@ export default function Book() {
         className="page-content"
         style={{
           minHeight: "300px",
+          height: "70vh",
           border: "1px solid var(--colors-main7)",
           padding: "20px",
           marginBottom: "20px",
@@ -28,17 +30,19 @@ export default function Book() {
       >
         {pages[currentPage].content}
       </div>
-      <div className="navigation">
+
+      <BookNavigator>
         <StyledButton onClick={prevPage} disabled={currentPage === 0}>
           Previous
         </StyledButton>
+        <h4>[[Page title]]</h4>
         <StyledButton
           onClick={nextPage}
           disabled={currentPage === pages.length - 1}
         >
           Next
         </StyledButton>
-      </div>
+      </BookNavigator>
     </>
   );
 }

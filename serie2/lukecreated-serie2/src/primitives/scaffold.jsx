@@ -5,6 +5,7 @@ const Scaffold = styled("div", {
   //   backgroundColor: "$gray1",
   padding: "1rem",
   backgroundImage: "linear-gradient(var(--colors-gray3),var(--colors-main1) )",
+  maxHeight: "100%",
 });
 
 export default Scaffold;

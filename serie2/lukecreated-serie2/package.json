@@ -1,7 +1,7 @@
 {
   "name": "lukecreated-serie2",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,12 +14,14 @@
     "@fontsource/ma-shan-zheng": "^5.0.12",
     "@heroicons/react": "^2.1.5",
     "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-popover": "^1.1.1",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-toast": "^1.2.1",
     "@radix-ui/react-tooltip": "^1.1.2",
     "@stitches/react": "^1.2.8",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-intl-universal": "^2.11.1"
