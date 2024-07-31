@@ -1,4 +1,11 @@
 import "./App.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+  useParams,
+} from "react-router-dom";
 import Book from "./components/book";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
@@ -6,8 +13,7 @@ import Scaffold from "./primitives/scaffold";
 import { useState, useEffect } from "react";
 import { createLightTheme, createDarkTheme } from "./styles/stitches.config";
 import { globalStyles } from "./styles/globalStyles";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import ErrorPage from "./components/errorPage.jsx";
+import ErrorPage from "./pages/errorPage.jsx";
 import PropTypes from "prop-types";
 
 function App() {
@@ -72,8 +78,19 @@ function App() {
         <br />
 
         <Routes>
-          <Route path="/:pagePath" element={<Book pages={pages} />} />
-          <Route path="/" element={<Book pages={pages} />} />
+          <Route
+            path="/:pagePath"
+            element={
+              <ValidatePagePath pages={pages}>
+                <Book pages={pages} />
+              </ValidatePagePath>
+            }
+          />
+          <Route
+            path="/"
+            element={<Navigate to={`/${pages[0].path}`} replace />}
+          />
+          <Route path="/error" element={<ErrorPage />} />
         </Routes>
 
         <Footer></Footer>
@@ -82,4 +99,20 @@ function App() {
   );
 }
 
+// Helper component to validate the page path
+function ValidatePagePath({ pages, children }) {
+  const { pagePath } = useParams();
+  const pageExists = pages.some((page) => page.path === pagePath);
+
+  if (pageExists) {
+    return children;
+  } else {
+    return <Navigate to="/error" />;
+  }
+}
+
+ValidatePagePath.propTypes = {
+  pages: PropTypes.array.isRequired,
+  children: PropTypes.node.isRequired,
+};
 export default App;

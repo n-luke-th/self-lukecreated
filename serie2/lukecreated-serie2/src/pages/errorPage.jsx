@@ -1,11 +1,8 @@
-import { useRouteError } from "react-router-dom";
+// import { useRouteError } from "react-router-dom";
 import StyledButton from "../primitives/button";
 import { Link } from "react-router-dom";
 
 export default function ErrorPage() {
-  const error = useRouteError();
-  console.error(error);
-
   return (
     <div
       id="error-component"
@@ -21,11 +18,11 @@ export default function ErrorPage() {
 
       <h3>
         <u>
-          {error.status}: <i>{error.statusText || error.message}</i>
+          404: <i>Not Found</i>
         </u>
       </h3>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>{error.data}</p>
+      <p>Sorry, the page you are requested does not exists.</p>
+      {/* <p>{error.data}</p> */}
       <Link to={"/"}>
         <StyledButton>Home</StyledButton>
       </Link>

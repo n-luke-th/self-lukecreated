@@ -15,6 +15,7 @@ const StyledButton = styled("button", {
   "&:disabled": {
     backgroundColor: "$grayA3",
     color: "$grayA6",
+    cursor: "not-allowed",
   },
   // Responsive styles
   "@bp1": {
