@@ -72,3 +72,4 @@ Created on May 22, 2023
 - Initial Development: Page layout is setup on July 30, 2024 -> __0.1.0__
 - Initial Development: Basic page navigation works on July 31, 2024 -> __0.1.1__
 - Initial Development: Not found page handling added on July 31, 2024 -> __0.1.2__
+- Initial Development: Contact dialog is added, and minor improvements on July 31, 2024 -> __0.1.3__

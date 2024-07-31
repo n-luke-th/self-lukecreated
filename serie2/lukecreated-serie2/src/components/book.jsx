@@ -36,7 +36,12 @@ export default function Book({ pages }) {
         className="page-content"
         style={{
           minHeight: "300px",
+          display: "flex",
+          flexDirection: "column",
+          flex: "flex-shrink",
           height: "70vh",
+          // justifyContent: "center",
+          alignItems: "center",
           border: "1px solid var(--colors-main7)",
           padding: "20px",
           marginBottom: "20px",

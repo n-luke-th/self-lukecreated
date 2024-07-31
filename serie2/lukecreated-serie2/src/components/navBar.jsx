@@ -1,6 +1,7 @@
 import { styled, keyframes } from "../styles/stitches.config";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { GearIcon, GitHubLogoIcon, CaretDownIcon } from "@radix-ui/react-icons";
+import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -10,7 +11,10 @@ const NavigationBar = ({ toggleTheme }) => {
       <NavigationMenuList>
         <NavigationMenu.Item>
           {/* nav head 1: Projects */}
-          <NavigationMenuLink href="https://projects.lukecreated.com">
+          <NavigationMenuLink
+            href="https://projects.lukecreated.com"
+            target="_blank"
+          >
             Projects
           </NavigationMenuLink>
         </NavigationMenu.Item>
@@ -40,17 +44,82 @@ const NavigationBar = ({ toggleTheme }) => {
 
         <NavigationMenu.Item>
           {/* nav head 3: Contact */}
-          <NavigationMenuLink
-            href="/contact"
+          {/* <NavigationMenuLink
+            href="#"
+            onClick={ContactDialog()}
             style={{ backgroundColor: "red", color: "yellow" }}
           >
             Contact
-          </NavigationMenuLink>
+          </NavigationMenuLink> */}
+          <AlertDialog.Root>
+            <AlertDialog.Trigger asChild>
+              <Button variant={"red"}>Contact</Button>
+            </AlertDialog.Trigger>
+            <AlertDialog.Portal>
+              <AlertDialogOverlay />
+              <AlertDialogContent>
+                <AlertDialogTitle
+                  style={{
+                    color: "red",
+                    fontSize: "3ex",
+                  }}
+                >
+                  Contact
+                </AlertDialogTitle>
+                <AlertDialogDescription>
+                  Email:{" "}
+                  <u
+                    style={{
+                      color: "var(--colors-gray12)",
+                    }}
+                  >
+                    contact@lukecreated.com
+                  </u>
+                </AlertDialogDescription>
+                <div style={{ justifyContent: "flex-end" }}>
+                  <div
+                    style={{
+                      justifyContent: "space-around",
+                      display: "inline-flex",
+                    }}
+                  >
+                    <AlertDialog.Action asChild>
+                      <ListItemLink
+                        href="mailto:contact@lukecreated.com"
+                        style={{
+                          width: "fit-content",
+                          backgroundColor: "var(--colors-gray12)",
+                          cursor: "pointer",
+                          color: "var(--colors-main1)",
+                        }}
+                      >
+                        Email him now
+                      </ListItemLink>
+                    </AlertDialog.Action>
+                    <AlertDialog.Cancel asChild>
+                      <Button
+                        css={{ marginLeft: 25 }}
+                        style={{
+                          color: "var(--colors-gray9)",
+                          backgroundColor: "var(--colors-main5)",
+                        }}
+                      >
+                        Cancel
+                      </Button>
+                    </AlertDialog.Cancel>
+                  </div>
+                </div>
+              </AlertDialogContent>
+            </AlertDialog.Portal>
+          </AlertDialog.Root>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
           {/* nav head 4: GitHub */}
-          <NavigationMenuLink href="https://github.com/ngzh-luke">
+          <NavigationMenuLink
+            href="https://github.com/ngzh-luke"
+            target="_blank"
+          >
             <GitHubLogoIcon></GitHubLogoIcon>
           </NavigationMenuLink>
         </NavigationMenu.Item>
@@ -87,6 +156,97 @@ const NavigationBar = ({ toggleTheme }) => {
 NavigationBar.propTypes = {
   toggleTheme: PropTypes.func.isRequired,
 };
+
+const Button = styled("button", {
+  padding: "5px 10px",
+  borderRadius: "4px",
+  margin: "1px",
+  border: "none",
+  cursor: "pointer",
+
+  "&:disabled": {
+    backgroundColor: "$grayA3",
+    color: "$grayA6",
+    cursor: "not-allowed",
+  },
+  // Responsive styles
+  "@bp1": {
+    fontSize: "10px",
+  },
+  "@bp2": {
+    fontSize: "15px",
+  },
+  variants: {
+    variant: {
+      red: {
+        backgroundColor: "red",
+        color: "yellow",
+        boxShadow: `0 2px 10px $main3`,
+        "&:hover": { backgroundColor: "$gray10" },
+        "&:focus": { boxShadow: `0 0 0 2px black` },
+      },
+      main: {
+        backgroundColor: "$main12",
+        color: "$gray4",
+        "&:hover": { backgroundColor: "$gray7" },
+        "&:focus": { boxShadow: `0 0 0 2px black` },
+      },
+    },
+  },
+
+  defaultVariants: {
+    variant: "main",
+  },
+});
+
+const overlayShow = keyframes({
+  "0%": { opacity: 0 },
+  "100%": { opacity: 1 },
+});
+
+const AlertDialogOverlay = styled(AlertDialog.Overlay, {
+  backgroundColor: "var(--colors-main12)",
+  position: "fixed",
+  inset: 0,
+  animation: `${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
+});
+
+const AlertDialogDescription = styled(AlertDialog.Description, {
+  marginBottom: 20,
+  color: "$gray11",
+  fontSize: 15,
+  lineHeight: 1.5,
+});
+
+const contentShow = keyframes({
+  "0%": { opacity: 0, transform: "translate(-50%, -48%) scale(.96)" },
+  "100%": { opacity: 1, transform: "translate(-50%, -50%) scale(1)" },
+});
+
+const AlertDialogContent = styled(AlertDialog.Content, {
+  backgroundColor: "$main7",
+  borderRadius: 6,
+  boxShadow:
+    "hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px",
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "90vw",
+  maxWidth: "500px",
+  maxHeight: "85vh",
+  padding: 25,
+  animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
+
+  "&:focus": { outline: "none" },
+});
+
+const AlertDialogTitle = styled(AlertDialog.Title, {
+  margin: 0,
+  color: "$gray11",
+  fontSize: 18,
+  fontWeight: 700,
+});
 
 const enterFromRight = keyframes({
   from: { transform: "translateX(200px)", opacity: 0 },
