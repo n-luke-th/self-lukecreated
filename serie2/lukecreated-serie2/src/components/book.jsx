@@ -10,23 +10,29 @@ export default function Book({ pages }) {
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-    const pageIndex = pages.findIndex((page) => page.path === pagePath);
+    const pageIndex = pages.findIndex((page) =>
+      Array.isArray(page.path)
+        ? page.path.includes(pagePath)
+        : page.path === pagePath
+    );
     if (pageIndex !== -1) {
       setCurrentPage(pageIndex);
     } else {
-      navigate(`/${pages[0].path}`);
+      navigate(`/${getFirstPath(pages[0].path)}`);
     }
   }, [pagePath, navigate, pages]);
 
+  const getFirstPath = (path) => (Array.isArray(path) ? path[0] : path);
+
   const nextPage = () => {
     if (currentPage < pages.length - 1) {
-      navigate(`/${pages[currentPage + 1].path}`);
+      navigate(`/${getFirstPath(pages[currentPage + 1].path)}`);
     }
   };
 
   const prevPage = () => {
     if (currentPage > 0) {
-      navigate(`/${pages[currentPage - 1].path}`);
+      navigate(`/${getFirstPath(pages[currentPage - 1].path)}`);
     }
   };
 
@@ -71,8 +77,11 @@ Book.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
-      path: PropTypes.string.isRequired,
       content: PropTypes.node.isRequired,
+      path: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+      ]).isRequired,
     })
   ).isRequired,
 };

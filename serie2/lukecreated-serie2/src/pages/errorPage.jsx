@@ -21,7 +21,7 @@ export default function ErrorPage() {
           404: <i>Not Found</i>
         </u>
       </h3>
-      <p>Sorry, the page you are requested does not exists.</p>
+      <p>Sorry, the page you requested does not exists.</p>
       {/* <p>{error.data}</p> */}
       <Link to={"/"}>
         <StyledButton>Home</StyledButton>

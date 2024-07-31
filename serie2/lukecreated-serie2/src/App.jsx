@@ -46,25 +46,25 @@ function App() {
       id: 1,
       title: "Home",
       content: <h1>Home: Page 1 Content 你好</h1>,
-      path: "home",
+      path: ["home"],
     },
     {
       id: 2,
       title: "About",
       content: <h1>About: Page 2 Content 你好</h1>,
-      path: "about",
+      path: ["about"],
     },
     {
       id: 3,
-      title: "Skills",
+      title: "Skills & Tools",
       content: <h1>Skills: Page 3 Content 你好</h1>,
-      path: "skills",
+      path: ["skills", "tools", "skills-and-tools", "tools-and-skills"],
     },
     {
       id: 4,
       title: "Favorite 3 Projects",
       content: <h1>Fav 3 prj: Page 3 Content 你好</h1>,
-      path: "fav-3-projects",
+      path: ["fav-3-projects"],
     },
   ];
 
@@ -102,7 +102,11 @@ function App() {
 // Helper component to validate the page path
 function ValidatePagePath({ pages, children }) {
   const { pagePath } = useParams();
-  const pageExists = pages.some((page) => page.path === pagePath);
+  const pageExists = pages.some((page) =>
+    Array.isArray(page.path)
+      ? page.path.includes(pagePath)
+      : page.path === pagePath
+  );
 
   if (pageExists) {
     return children;
@@ -112,7 +116,17 @@ function ValidatePagePath({ pages, children }) {
 }
 
 ValidatePagePath.propTypes = {
-  pages: PropTypes.array.isRequired,
+  pages: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      content: PropTypes.node.isRequired,
+      path: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+      ]).isRequired,
+    })
+  ).isRequired,
   children: PropTypes.node.isRequired,
 };
 export default App;
