@@ -70,3 +70,4 @@ Created on May 22, 2023
 - Initial Development: Initialized Serie 2 development on July 30, 2024 -> __0.0.0__
 - Initial Development: Theme system is implemented on July 30, 2024 -> __0.0.1__
 - Initial Development: Page layout is setup on July 30, 2024 -> __0.1.0__
+- Initial Development: Basic page navigation works on July 31, 2024 -> __0.1.1__

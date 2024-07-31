@@ -6,6 +6,8 @@ import Scaffold from "./primitives/scaffold";
 import { useState, useEffect } from "react";
 import { createLightTheme, createDarkTheme } from "./styles/stitches.config";
 import { globalStyles } from "./styles/globalStyles";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import ErrorPage from "./components/errorPage.jsx";
 import PropTypes from "prop-types";
 
 function App() {
@@ -17,7 +19,10 @@ function App() {
   const [theme, setTheme] = useState(createLightTheme());
 
   useEffect(() => {
-    const initialTheme = "light";
+    const getCurrentTheme = () =>
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = getCurrentTheme() == true ? "dark" : "light";
+    console.log(`system initial theme: ${initialTheme}`);
     setTheme(initialTheme === "dark" ? createDarkTheme() : createLightTheme());
   }, []);
 
@@ -27,19 +32,53 @@ function App() {
         ? createDarkTheme()
         : createLightTheme()
     );
+    // console.log("theme switched");
   };
+
+  const pages = [
+    {
+      id: 1,
+      title: "Home",
+      content: <h1>Home: Page 1 Content 你好</h1>,
+      path: "home",
+    },
+    {
+      id: 2,
+      title: "About",
+      content: <h1>About: Page 2 Content 你好</h1>,
+      path: "about",
+    },
+    {
+      id: 3,
+      title: "Skills",
+      content: <h1>Skills: Page 3 Content 你好</h1>,
+      path: "skills",
+    },
+    {
+      id: 4,
+      title: "Favorite 3 Projects",
+      content: <h1>Fav 3 prj: Page 3 Content 你好</h1>,
+      path: "fav-3-projects",
+    },
+  ];
 
   // Apply global styles
   globalStyles();
 
   return (
-    <Scaffold className={theme}>
-      <NavBar toggleTheme={toggleTheme} />
-      <br />
+    <Router>
+      <Scaffold className={theme}>
+        <NavBar toggleTheme={toggleTheme} />
+        <br />
 
-      <Book />
-      <Footer></Footer>
-    </Scaffold>
+        <Routes>
+          <Route path="/:pagePath" element={<Book pages={pages} />} />
+          <Route path="/" element={<Book pages={pages} />} />
+        </Routes>
+
+        <Footer></Footer>
+      </Scaffold>
+    </Router>
   );
 }
 
