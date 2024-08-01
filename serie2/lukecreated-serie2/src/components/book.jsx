@@ -50,8 +50,8 @@ export default function Book({ pages }) {
           alignContent: "space-around",
           border: "1px solid var(--colors-main7)",
           borderRadius: 11,
-          padding: "20px",
-          marginBottom: "20px",
+          padding: "15px",
+          marginBottom: "15px",
           overflow: "hidden",
         }}
       >

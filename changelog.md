@@ -1,4 +1,4 @@
-# lukecreated update history
+# LukeCreated website update history
 
 Developed by __Kittipich "Luke" Aiumbhornsin__
 
@@ -76,5 +76,6 @@ Created on May 22, 2023
 - Initial Development: Add support for multi paths, and minor improvements on July 31, 2024 -> __0.1.4__
 - Initial Development: Draft for book contents on August 1, 2024 -> __0.1.5__
 - Initial Development: Improved navigation to other page on navbar on August 1, 2024 -> __0.1.6__
-- Initial Development: Added contents for first 2 pages, and minor improvements on August 1, 2024 -> __0.1.7__
-- Initial Development: Added contents for page 3, and minor improvements on August 1, 2024 -> __0.1.8__
+- Initial Development: Added contents for Home & About pages, and minor improvements on August 1, 2024 -> __0.1.7__
+- Initial Development: Added contents for Skills & Tools page, and minor improvements on August 1, 2024 -> __0.1.8__
+- Initial Development: Draft for Projects page, and minor improvements on August 2, 2024 -> __0.1.9__

@@ -33,10 +33,10 @@ const NavigationBar = ({ toggleTheme }) => {
               <CustomListItem title="About" to="/about">
                 Information about Luke
               </CustomListItem>
-              <CustomListItem title="Skills ｜ Tools" to="/skills">
+              <CustomListItem title="Skills & Tools" to="/skills">
                 Luke can...
               </CustomListItem>
-              <CustomListItem title="3 favorite projects" to="/3-fav-projects">
+              <CustomListItem title="3 favorite projects" to="/projects">
                 Luke&apos;s favorite 3 projects
               </CustomListItem>
             </List>

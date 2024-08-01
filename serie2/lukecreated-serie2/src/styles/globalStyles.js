@@ -14,7 +14,10 @@ import "@fontsource/krub/700.css"; // bold
 import "@fontsource/ma-shan-zheng";
 
 export const globalStyles = globalCss({
-  "*": {},
+  "*": {
+    msOverflowStyle: "none" /* IE and Edge */,
+    scrollbarWidth: "none",
+  },
   html: {
     padding: 0,
     margin: 0,
