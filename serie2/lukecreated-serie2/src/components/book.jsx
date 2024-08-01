@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import StyledButton from "../primitives/button";
+import { StyledButton } from "../primitives/buttons";
 import BookNavigator from "../primitives/bookNavigator";
 import PropTypes from "prop-types";
 

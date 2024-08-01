@@ -1,5 +1,5 @@
 // import { useRouteError } from "react-router-dom";
-import StyledButton from "../primitives/button";
+import { StyledButton } from "../primitives/buttons";
 import { Link } from "react-router-dom";
 
 export default function ErrorPage() {
