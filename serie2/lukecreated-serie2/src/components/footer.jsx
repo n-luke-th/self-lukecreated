@@ -8,6 +8,7 @@ function Footer() {
           position: "relative",
           height: "5vh",
           padding: "auto",
+          //   margin: "1rem",
           color: "var(--colors-gray11)",
           justifyContent: "center",
         }}

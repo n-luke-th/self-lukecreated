@@ -44,13 +44,15 @@ export default function Book({ pages }) {
           minHeight: "300px",
           display: "flex",
           flexDirection: "column",
-          flex: "flex-shrink",
           height: "70vh",
-          // justifyContent: "center",
+          justifyContent: "flex-start",
           alignItems: "center",
+          alignContent: "space-around",
           border: "1px solid var(--colors-main7)",
+          borderRadius: 11,
           padding: "20px",
           marginBottom: "20px",
+          overflow: "hidden",
         }}
       >
         {pages[currentPage].content}

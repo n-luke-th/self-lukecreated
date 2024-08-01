@@ -1,4 +1,3 @@
-import "./App.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -15,6 +14,7 @@ import { createLightTheme, createDarkTheme } from "./styles/stitches.config";
 import { globalStyles } from "./styles/globalStyles";
 import ErrorPage from "./pages/errorPage.jsx";
 import PropTypes from "prop-types";
+import pages from "./bookContents.jsx";
 
 function App() {
   Scaffold.propTypes = {
@@ -40,33 +40,6 @@ function App() {
     );
     // console.log("theme switched");
   };
-
-  const pages = [
-    {
-      id: 1,
-      title: "Home",
-      content: <h1>Home: Page 1 Content 你好</h1>,
-      path: ["home"],
-    },
-    {
-      id: 2,
-      title: "About",
-      content: <h1>About: Page 2 Content 你好</h1>,
-      path: ["about"],
-    },
-    {
-      id: 3,
-      title: "Skills & Tools",
-      content: <h1>Skills: Page 3 Content 你好</h1>,
-      path: ["skills", "tools", "skills-and-tools", "tools-and-skills"],
-    },
-    {
-      id: 4,
-      title: "Favorite 3 Projects",
-      content: <h1>Fav 3 prj: Page 3 Content 你好</h1>,
-      path: ["fav-3-projects"],
-    },
-  ];
 
   // Apply global styles
   globalStyles();
