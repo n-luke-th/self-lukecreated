@@ -2,6 +2,7 @@ import { styled, keyframes } from "../styles/stitches.config";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { GearIcon, GitHubLogoIcon, CaretDownIcon } from "@radix-ui/react-icons";
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
+import { Link } from "react-router-dom";
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -26,31 +27,24 @@ const NavigationBar = ({ toggleTheme }) => {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <List layout="one">
-              <ListItem title="Home" href="/">
+              <CustomListItem title="Home" to="/">
                 Site&apos;s home
-              </ListItem>
-              <ListItem title="About" href="/about">
+              </CustomListItem>
+              <CustomListItem title="About" to="/about">
                 Information about Luke
-              </ListItem>
-              <ListItem title="Skills" href="/skills">
-                Luke&apos;s skills
-              </ListItem>
-              <ListItem title="3 favorite projects" href="/fav-3-projects">
+              </CustomListItem>
+              <CustomListItem title="Skills" to="/skills">
+                Luke&apos;s skills Luke&apos;s skills
+              </CustomListItem>
+              <CustomListItem title="3 favorite projects" to="/fav-3-projects">
                 Luke&apos;s favorite 3 projects
-              </ListItem>
+              </CustomListItem>
             </List>
           </NavigationMenuContent>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item>
           {/* nav head 3: Contact */}
-          {/* <NavigationMenuLink
-            href="#"
-            onClick={ContactDialog()}
-            style={{ backgroundColor: "red", color: "yellow" }}
-          >
-            Contact
-          </NavigationMenuLink> */}
           <AlertDialog.Root>
             <AlertDialog.Trigger asChild>
               <Button variant={"red"}>Contact</Button>
@@ -424,12 +418,46 @@ const ListItem = React.forwardRef(
     </li>
   )
 );
+
+const CustomListItem = React.forwardRef(
+  ({ children, title, ...props }, forwardedRef) => (
+    <li>
+      <NavigationMenu.Link asChild>
+        <CustomListItemLink {...props} href={forwardedRef}>
+          <ListItemHeading>{title}</ListItemHeading>
+          <ListItemText>{children}</ListItemText>
+        </CustomListItemLink>
+      </NavigationMenu.Link>
+    </li>
+  )
+);
+
+const CustomListItemLink = styled(Link, {
+  display: "block",
+  outline: "none",
+  textDecoration: "none",
+  userSelect: "none",
+  padding: 12,
+  borderRadius: 6,
+  fontSize: 15,
+  lineHeight: 1,
+  "&:focus": { boxShadow: `0 0 0 2px ${"$gray7"}` },
+  "&:hover": { backgroundColor: "$main3" },
+});
+
 ListItem.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 };
 ListItem.displayName = ListItem;
+
+CustomListItem.propTypes = {
+  children: PropTypes.node,
+  title: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+};
+CustomListItem.displayName = CustomListItem;
 
 const ListItemLink = styled("a", {
   display: "block",
@@ -457,37 +485,6 @@ const ListItemText = styled("p", {
   lineHeight: 1.4,
   fontWeight: "initial",
 });
-
-// const Callout = styled("a", {
-//   display: "flex",
-//   justifyContent: "flex-end",
-//   flexDirection: "column",
-//   width: "100%",
-//   height: "100%",
-//   background: `linear-gradient(135deg, ${"$main9"} 0%, ${"$gray9"} 100%);`,
-//   borderRadius: 6,
-//   padding: 25,
-//   textDecoration: "none",
-//   outline: "none",
-//   userSelect: "none",
-//   "&:focus": { boxShadow: `0 0 0 2px ${"$gray6"}` },
-// });
-
-// const CalloutHeading = styled("div", {
-//   color: "white",
-//   fontSize: 18,
-//   fontWeight: 500,
-//   lineHeight: 1.2,
-//   marginTop: 16,
-//   marginBottom: 7,
-// });
-
-// const CalloutText = styled("p", {
-//   all: "unset",
-//   //   color: "$",
-//   fontSize: 14,
-//   lineHeight: 1.3,
-// });
 
 const ViewportPosition = styled("div", {
   position: "absolute",

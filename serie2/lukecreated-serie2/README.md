@@ -1,8 +1,17 @@
 # `LukeCreated` Website Serie 2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The upgraded of Luke's personal branding that introduces a lot of interesting things about him!
 
-Currently, two official plugins are available:
+## Tools used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [Fontsource](https://fontsource.org/)
+- [Radix UI](https://www.radix-ui.com/)
+- [prop-types](https://www.npmjs.com/package/prop-types?activeTab=readme)
+- [React Router](https://reactrouter.com/en/main)
+- [Stitches](https://stitches.dev/)
+
+## Tools' license(s) disclaimer
+
+All of the tools listed/used/applied in this project are subject to their respective licensing agreement.

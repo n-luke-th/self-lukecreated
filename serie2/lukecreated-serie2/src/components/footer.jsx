@@ -1,4 +1,3 @@
-// import { styled } from "../styles/stitches.config";
 function Footer() {
   return (
     <>
