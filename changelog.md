@@ -77,3 +77,4 @@ Created on May 22, 2023
 - Initial Development: Draft for book contents on August 1, 2024 -> __0.1.5__
 - Initial Development: Improved navigation to other page on navbar on August 1, 2024 -> __0.1.6__
 - Initial Development: Added contents for first 2 pages, and minor improvements on August 1, 2024 -> __0.1.7__
+- Initial Development: Added contents for page 3, and minor improvements on August 1, 2024 -> __0.1.8__
