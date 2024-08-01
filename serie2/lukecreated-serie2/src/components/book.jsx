@@ -1,13 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { StyledButton } from "../primitives/buttons";
 import BookNavigator from "../primitives/bookNavigator";
 import PropTypes from "prop-types";
 
-export default function Book({ pages }) {
+const Book = ({ pages }) => {
   const navigate = useNavigate();
   const { pagePath } = useParams();
   const [currentPage, setCurrentPage] = useState(0);
+
+  const getFirstPath = useCallback(
+    (path) => (Array.isArray(path) ? path[0] : path),
+    []
+  );
 
   useEffect(() => {
     const pageIndex = pages.findIndex((page) =>
@@ -20,21 +25,24 @@ export default function Book({ pages }) {
     } else {
       navigate(`/${getFirstPath(pages[0].path)}`);
     }
-  }, [pagePath, navigate, pages]);
+  }, [pagePath, navigate, pages, getFirstPath]);
 
-  const getFirstPath = (path) => (Array.isArray(path) ? path[0] : path);
-
-  const nextPage = () => {
+  const nextPage = useCallback(() => {
     if (currentPage < pages.length - 1) {
       navigate(`/${getFirstPath(pages[currentPage + 1].path)}`);
     }
-  };
+  }, [currentPage, navigate, pages, getFirstPath]);
 
-  const prevPage = () => {
+  const prevPage = useCallback(() => {
     if (currentPage > 0) {
       navigate(`/${getFirstPath(pages[currentPage - 1].path)}`);
     }
-  };
+  }, [currentPage, navigate, pages, getFirstPath]);
+
+  const pageContent = useMemo(
+    () => pages[currentPage].content,
+    [pages, currentPage]
+  );
 
   return (
     <>
@@ -55,7 +63,7 @@ export default function Book({ pages }) {
           overflow: "hidden",
         }}
       >
-        {pages[currentPage].content}
+        {pageContent}
       </div>
 
       <BookNavigator>
@@ -72,7 +80,7 @@ export default function Book({ pages }) {
       </BookNavigator>
     </>
   );
-}
+};
 
 Book.propTypes = {
   pages: PropTypes.arrayOf(
@@ -87,3 +95,5 @@ Book.propTypes = {
     })
   ).isRequired,
 };
+
+export default Book;

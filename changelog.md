@@ -79,3 +79,4 @@ Created on May 22, 2023
 - Initial Development: Added contents for Home & About pages, and minor improvements on August 1, 2024 -> __0.1.7__
 - Initial Development: Added contents for Skills & Tools page, and minor improvements on August 1, 2024 -> __0.1.8__
 - Initial Development: Draft for Projects page, and minor improvements on August 2, 2024 -> __0.1.9__
+- Initial Development: Book code related refactored, and other improvements on August 2, 2024 -> __0.2.0__
