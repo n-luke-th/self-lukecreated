@@ -15,6 +15,7 @@ import { globalStyles } from "./styles/globalStyles";
 import ErrorPage from "./pages/errorPage.jsx";
 import PropTypes from "prop-types";
 import pages from "./bookContents.jsx";
+import React from "react";
 
 function App() {
   Scaffold.propTypes = {

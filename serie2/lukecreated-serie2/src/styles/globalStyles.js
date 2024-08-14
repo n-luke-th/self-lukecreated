@@ -27,8 +27,8 @@ export const globalStyles = globalCss({
   "#root": {
     padding: 0,
     margin: 0,
-    height: "100%",
-    width: "100%",
+    height: "100vh",
+    width: "100vw",
   },
   body: {
     overflow: "hidden",
@@ -36,6 +36,8 @@ export const globalStyles = globalCss({
     padding: 0,
     boxSizing: "border-box",
     fontFamily: "Krub, Ma Shan Zheng, sans-serif, cursive, system-ui",
+    backgroundImage:
+      "linear-gradient(var(--colors-gray3),var(--colors-main1) )",
     // Responsive styles
     "@bp1": {
       fontSize: "16px",

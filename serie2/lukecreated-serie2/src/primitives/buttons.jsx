@@ -34,6 +34,7 @@ const ActionButton = styled("button", {
   borderRadius: "4px",
   border: "none",
   cursor: "pointer",
+  transition: "all 0.35",
 
   "&:hover": {
     backgroundImage:
