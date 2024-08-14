@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import SecondaryP from "../../primitives/p";
 const SkillsContent = () => (
   <div

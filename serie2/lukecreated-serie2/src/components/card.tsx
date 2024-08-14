@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
 import { styled } from "../styles/stitches.config";
+import React from "react";
 
 const CardContainer = styled("div", {
   borderRadius: "11px",
@@ -46,25 +46,32 @@ const ErrorMessage = styled("div", {
   marginTop: "50px",
 });
 
-const Card = ({ title, description, imageURL, gitURL }) => {
+interface CardProps {
+  title: string;
+  description: string;
+  imageURL: string;
+  gitURL: string;
+}
+
+const Card = (card: CardProps) => {
   return (
     <CardContainer className="card-container">
-      <CardImage src={imageURL} alt={title} />
+      <CardImage src={card.imageURL} alt={card.title} />
       <CardContent>
-        <CardTitle>{title}</CardTitle>
-        <p>{description}</p>
-        <p>{gitURL}</p>
+        <CardTitle>{card.title}</CardTitle>
+        <p>{card.description}</p>
+        <p>{card.gitURL}</p>
       </CardContent>
     </CardContainer>
   );
 };
 
-Card.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  imageURL: PropTypes.string,
-  gitURL: PropTypes.string,
-};
+// Card.propTypes = {
+//   title: PropTypes.string.isRequired,
+//   description: PropTypes.string.isRequired,
+//   imageURL: PropTypes.string,
+//   gitURL: PropTypes.string,
+// };
 
 export { ErrorMessage, CardsWrapper };
 export default Card;

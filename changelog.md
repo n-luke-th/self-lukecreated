@@ -81,3 +81,4 @@ Created on May 22, 2023
 - Initial Development: Draft for Projects page, and minor improvements on August 2, 2024 -> __0.1.9__
 - Initial Development: Book code related refactored, and other improvements on August 2, 2024 -> __0.2.0__
 - Initial Development: Minor improvements on August 14, 2024 -> __0.2.1__
+- Initial Development: Initialized the conversion to TypeScript version of the website on August 14, 2024 -> __0.2.2__

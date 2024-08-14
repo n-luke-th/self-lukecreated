@@ -24,9 +24,9 @@ const pages = [
   },
   {
     id: 4,
-    title: "3 Favorite Projects",
+    title: "Favorite Projects",
     content: <ProjectsContent />,
-    path: ["3-fav-projects", "projects", "prjs", "project", "prj"],
+    path: ["fav-projects", "projects", "prjs", "project", "prj"],
   },
 ];
 

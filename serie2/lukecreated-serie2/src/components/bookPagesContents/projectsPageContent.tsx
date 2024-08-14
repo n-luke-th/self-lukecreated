@@ -54,9 +54,13 @@ const ProjectsContent = () => {
       <CardsWrapper className="cards-wrapper">
         {projects.map((project) => (
           <Card
+            // @ts-ignore
             key={project.id}
+            // @ts-ignore
             title={project.title}
+            // @ts-ignore
             description={project.description}
+            // @ts-ignore
             imageURL={project.image}
           />
         ))}
