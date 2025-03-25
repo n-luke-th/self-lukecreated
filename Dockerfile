@@ -26,7 +26,7 @@ WORKDIR /app/
 RUN cd serie3 && flutter build web
 
 FROM nginx:1.27.4-alpine
-COPY --from=build-env /app/build/web /usr/share/nginx/html
+COPY --from=build-env /app/serie3/build/web /usr/share/nginx/html
 
 # EXPOSE <EXPOSE PORT THAT YOU WANT>
 EXPOSE 8080
