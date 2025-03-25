@@ -23,7 +23,7 @@
     "@stitches/react": "^1.2.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-intl-universal": "^2.11.1",
+    "react-intl-universal": "^2.12.0",
     "react-router-dom": "^6.25.1"
   },
   "devDependencies": {
