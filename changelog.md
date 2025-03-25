@@ -87,3 +87,4 @@ Created on May 22, 2023
 ### Serie 3
 
 - Initial Development: Initialized Serie 3 development on March 25, 2025 -> **0.0.0**
+- Initial Development: Theme system is implemented as well as main icons and structure on March 25, 2025 -> **0.0.1**

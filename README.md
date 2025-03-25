@@ -1,14 +1,28 @@
 # Personal website `LukeCreated`
 
-Source code for personal website that will introduces a lot of interesting things about __Luke__ himself!
+Source code for personal website that will introduces a lot of interesting things about **Luke** himself!
 
 Personal Project: `LukeCreated` website
 
-site deployed at: __[lukecreated.com](https://lukecreated.com)__ and __[www.lukecreated.com](https://www.lukecreated.com)__ in which it is being host using AWS in Hong Kong
+site deployed at: **[lukecreated.com](https://lukecreated.com)** and **[www.lukecreated.com](https://www.lukecreated.com)**
 
-reserved URL: -
-~~[ww2.lukecreated.com](https://ww2.lukecreated.com)~~
+## Technologies
+
+Current version of the website is built with Flutter powered with dependencies:
+
+- flutter_svg
+- google_fonts
+- url_launcher
+
+## Local Run
+
+- To run the website locally, you need to have Flutter installed.
+- Following command will run the website locally on your machine and open with Google Chrome on port `5555`.
+
+```bash
+flutter run -d chrome --web-port 5555
+```
 
 ## Disclaimer
 
-The author is _**not affiliated**_ with any __source(s)/product(s)/tools__ listed/used in this project.
+The author is _**not affiliated**_ with any **source(s)/product(s)/tools** listed/used in this project.
