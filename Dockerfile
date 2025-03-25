@@ -29,4 +29,4 @@ FROM nginx:1.27.4-alpine
 COPY --from=build-env /app/serie3/build/web /usr/share/nginx/html
 
 # EXPOSE <EXPOSE PORT THAT YOU WANT>
-EXPOSE 8080
+EXPOSE 80
