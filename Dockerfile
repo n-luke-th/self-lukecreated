@@ -23,7 +23,7 @@ COPY . /app/
 WORKDIR /app/
 
 # Build the Flutter web application
-RUN cd serie3 && flutter build web
+RUN cd serie3 && flutter build web --release
 
 FROM nginx:1.27.4-alpine
 COPY --from=build-env /app/serie3/build/web /usr/share/nginx/html
