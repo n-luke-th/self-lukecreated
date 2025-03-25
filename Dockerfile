@@ -31,8 +31,8 @@
 # # EXPOSE <EXPOSE PORT THAT YOU WANT>
 # EXPOSE 8080
 
-FROM nginx:1.21.1-alpine
-RUN mkdir /app/
+FROM nginx:alpine
+# RUN mkdir /app/
 # Set the working directory inside the container
 # WORKDIR /app/
 COPY serie3/build/web /usr/share/nginx/html
