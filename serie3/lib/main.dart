@@ -120,7 +120,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     CircleAvatar(
                       radius: 100.0,
-                      backgroundImage: AssetImage('assets/Luke.jpeg'),
+                      backgroundImage:
+                      //  AssetImage('assets/Luke.jpeg'),
+                      NetworkImage(
+                        "https://assets.lukecreated.com/images/self.luke/Luke.jpeg",
+                      ),
+                      onBackgroundImageError: (exception, stackTrace) {},
                     ),
                     Style.verticalSpace,
                     SelectableText(
