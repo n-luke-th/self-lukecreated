@@ -13,6 +13,7 @@ Current version of the website is built with Flutter powered with dependencies:
 - flutter_svg
 - google_fonts
 - url_launcher
+- cached_network_image
 
 ## Local Run
 
