@@ -14,6 +14,7 @@ Current version of the website is built with Flutter powered with dependencies:
 - google_fonts
 - url_launcher
 - cached_network_image
+- intl
 
 ## Local Run
 

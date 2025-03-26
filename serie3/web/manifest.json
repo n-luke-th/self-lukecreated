@@ -1,11 +1,11 @@
 {
   "name": "LukeCreated",
-  "short_name": "LukeCreated",
+  "short_name": "LC",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#003a44",
   "theme_color": "#cce1fe",
-  "description": "LukeCreated is a personal website of Luke, a software developer.",
+  "description": "LukeCreated is a personal website of Luke (Kittipich Aiumbhornsin), a software developer.",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "icons": [

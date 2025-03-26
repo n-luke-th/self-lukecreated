@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: mainBodyContents(),
               ),
             ),
-            bottomIconsShortcut(context),
+            bottomIconsShortcut(),
           ],
         ),
       ),
@@ -149,26 +149,53 @@ class _MyHomePageState extends State<MyHomePage> {
         'LukeCreated',
         style: Style.titleTextStyle(currentThemeMode: _themeMode),
       ),
+      leadingWidth: MediaQuery.of(context).size.width * 0.2,
       centerTitle: true,
-      leading: IconButton.filled(
-        constraints: BoxConstraints(),
-        enableFeedback: true,
-        tooltip: 'Resume',
-        style: IconButton.styleFrom(
-          backgroundColor: currentTheme.colorScheme.tertiaryContainer,
-          side: BorderSide(color: currentTheme.colorScheme.tertiary, width: 5),
-        ),
-        color: currentTheme.iconTheme.color,
-        icon: const Icon(Icons.document_scanner_rounded),
-        onPressed:
-            () => launchUrl(
-              mode: LaunchMode.platformDefault,
-              // TODO: add resume link
-              Uri.parse(
-                'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV1.2.pdf',
-              ),
-              webOnlyWindowName: "_blank",
-            ),
+      leading: Padding(
+        padding: const EdgeInsets.all(Style.tinyPadding),
+        child:
+            MediaQuery.of(context).size.width >= 580
+                ? TextButton.icon(
+                  icon: const Icon(Icons.document_scanner_rounded),
+                  label: Text("Resume"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: currentTheme.colorScheme.tertiaryContainer,
+                    foregroundColor:
+                        currentTheme.colorScheme.onTertiaryContainer,
+                    side: BorderSide(
+                      color: currentTheme.colorScheme.tertiary,
+                      width: 3,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        Style.defaultBorderRadius,
+                      ),
+                    ),
+                  ),
+                  onPressed: () => openResume(),
+                )
+                : IconButton.filled(
+                  constraints: BoxConstraints(),
+                  enableFeedback: true,
+                  tooltip: 'Resume',
+                  style: IconButton.styleFrom(
+                    backgroundColor: currentTheme.colorScheme.tertiaryContainer,
+                    foregroundColor:
+                        currentTheme.colorScheme.onTertiaryContainer,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        Style.defaultBorderRadius,
+                      ),
+                    ),
+                    side: BorderSide(
+                      color: currentTheme.colorScheme.tertiary,
+                      width: 5,
+                    ),
+                  ),
+                  color: currentTheme.iconTheme.color,
+                  icon: const Icon(Icons.document_scanner_rounded),
+                  onPressed: () => openResume(),
+                ),
       ),
       actions: [
         Padding(
@@ -212,7 +239,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     value: 'change-language',
                     child: ListTile(
                       leading: Icon(Icons.language),
-                      title: Text('go to "testStorage"'),
+                      title: Text('Change language'),
                     ),
                   ),
                 ],
@@ -222,7 +249,17 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Expanded bottomIconsShortcut(BuildContext context) {
+  Future<bool> openResume() {
+    return launchUrl(
+      mode: LaunchMode.platformDefault,
+      Uri.parse(
+        'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV1.2.pdf',
+      ),
+      webOnlyWindowName: "_blank",
+    );
+  }
+
+  Expanded bottomIconsShortcut() {
     return Expanded(
       child: Container(
         // color: Colors.transparent,
