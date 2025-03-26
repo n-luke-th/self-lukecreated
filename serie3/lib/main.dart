@@ -3,6 +3,8 @@ import 'package:cached_network_image/cached_network_image.dart'
 import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:serie3/generated/i18n/app_localizations.dart'
+    show AppLocalizations;
 import 'package:serie3/style.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -38,6 +40,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'LukeCreated',
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: [
+        Locale('en'), // English
+        Locale('th'), // Thai
+        // Locale("zh"), // Chinese
+      ],
       theme: _lightTheme,
       darkTheme: _darkTheme,
       themeMode: ThemeMode.system,
@@ -136,6 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
           textAlign: TextAlign.center,
         ),
         Style.smallVerticalSpace,
+
         // Add more information here, e.g., skills, projects, contact details
       ],
     );
@@ -220,6 +229,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 case "change-theme":
                   _changeTheme();
                   break;
+                case "change-language":
+                  // _changeLanguage();
+                  break;
               }
             },
             itemBuilder:
@@ -235,11 +247,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       title: Text('Change theme'),
                     ),
                   ),
-                  const PopupMenuItem<String>(
+                  PopupMenuItem<String>(
                     value: 'change-language',
                     child: ListTile(
-                      leading: Icon(Icons.language),
-                      title: Text('Change language'),
+                      leading: const Icon(Icons.language),
+                      title: Text(AppLocalizations.of(context)!.changeLanguage),
                     ),
                   ),
                 ],

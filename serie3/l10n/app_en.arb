@@ -1,0 +1,10 @@
+{
+  "@@locale": "en",
+  "@@author": "Luke",
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "changeLanguage": "Change Language",
+  "@changeLanguage": {}
+}

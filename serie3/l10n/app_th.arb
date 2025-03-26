@@ -1,0 +1,8 @@
+{
+  "@@locale": "th",
+  "@@author": "Luke",
+  "helloWorld": "สวัสดีชาวโลก!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  }
+}
