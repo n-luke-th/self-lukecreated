@@ -88,3 +88,4 @@ Created on May 22, 2023
 
 - Initial Development: Initialized Serie 3 development on March 25, 2025 -> **0.0.0**
 - Initial Development: Theme system is implemented as well as main icons and structure on March 25, 2025 -> **0.0.1**
+- Initial Development: Page layout is setup with all icon shortcuts and resume link added on March 26, 2025 -> **0.0.2**
