@@ -172,6 +172,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Skills and Interests'**
   String get skillsAndInterests;
+
+  /// No description provided for @interests.
+  ///
+  /// In en, this message translates to:
+  /// **'Interests'**
+  String get interests;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm'**
+  String get confirm;
+
+  /// No description provided for @languageUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Language updated'**
+  String get languageUpdated;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @settingsBtnTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings: Theme/Language'**
+  String get settingsBtnTooltip;
+
+  /// No description provided for @myName.
+  ///
+  /// In en, this message translates to:
+  /// **'Kittipich Aiumbhornsin (Luke)'**
+  String get myName;
+
+  /// No description provided for @introTxt.
+  ///
+  /// In en, this message translates to:
+  /// **'Passionate software developer who loves building innovative solutions and exploring new technologies.'**
+  String get introTxt;
+
+  /// No description provided for @langISpeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Languages I Speak'**
+  String get langISpeak;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

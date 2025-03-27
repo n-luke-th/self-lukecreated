@@ -7,15 +7,21 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:serie3/generated/i18n/app_localizations.dart'
     show AppLocalizations;
 import 'package:serie3/style.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:serie3/utils.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  MyApp({super.key});
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Locale _locale = Locale('en');
   final ThemeData _lightTheme = ThemeData.light().copyWith(
     colorScheme: ColorScheme.fromSeed(
       seedColor: Style.primaryColorLight,
@@ -24,6 +30,7 @@ class MyApp extends StatelessWidget {
       surface: Style.backgroundColorLight,
       brightness: Brightness.light,
     ),
+    textTheme: Style.textTheme,
   );
 
   final ThemeData _darkTheme = ThemeData.dark().copyWith(
@@ -34,7 +41,14 @@ class MyApp extends StatelessWidget {
       surface: Style.backgroundColorDark,
       brightness: Brightness.dark,
     ),
+    textTheme: Style.textTheme,
   );
+
+  void _changeLanguage(String languageCode) {
+    setState(() {
+      _locale = _locale.languageCode == "en" ? Locale("th") : Locale("en");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +56,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'LukeCreated',
       localizationsDelegates: AppLocalizations.localizationsDelegates,
+      locale: _locale,
       supportedLocales: [
         Locale('en'), // English
         Locale('th'), // Thai
@@ -50,7 +65,12 @@ class MyApp extends StatelessWidget {
       theme: _lightTheme,
       darkTheme: _darkTheme,
       themeMode: ThemeMode.system,
-      home: MyHomePage(lightTheme: _lightTheme, darkTheme: _darkTheme),
+      home: MyHomePage(
+        lightTheme: _lightTheme,
+        darkTheme: _darkTheme,
+        changeLanguage: _changeLanguage,
+        locale: _locale,
+      ),
     );
   }
 }
@@ -58,10 +78,14 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   final ThemeData lightTheme;
   final ThemeData darkTheme;
+  final Locale locale;
+  final void Function(String) changeLanguage;
   const MyHomePage({
     super.key,
     required this.lightTheme,
     required this.darkTheme,
+    required this.changeLanguage,
+    required this.locale,
   });
 
   @override
@@ -73,6 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
   ThemeMode _themeMode = ThemeMode.system;
   ThemeData get currentTheme =>
       _themeMode == ThemeMode.light ? widget.lightTheme : widget.darkTheme;
+
+  late String onSelectingLang;
+
+  @override
+  initState() {
+    super.initState();
+
+    onSelectingLang = widget.locale.languageCode;
+  }
 
   void _changeTheme() {
     setState(() {
@@ -162,7 +195,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Style.verticalSpace,
         // Languages
         _subSkillsGroup(
-          title: "🌐 Languages I Speak:",
+          title: "🌐 ${AppLocalizations.of(context)!.langISpeak}:",
           skills: [
             _skillChip('English (Confident)'),
             _skillChip('Thai (Native)'),
@@ -211,12 +244,12 @@ class _MyHomePageState extends State<MyHomePage> {
       children: [
         SelectableText(
           textAlign: TextAlign.center,
-          'Kittipich "Luke" Aiumbhornsin',
+          AppLocalizations.of(context)!.myName,
           style: Style.titleTextStyle(currentThemeMode: _themeMode),
         ),
         Style.smallVerticalSpace,
         SelectableText(
-          'A Software Developer who loves to explore new technologies and build cool stuffs.',
+          AppLocalizations.of(context)!.introTxt,
           style: Style.bodyTextStyle(currentThemeMode: _themeMode),
           textAlign: TextAlign.center,
         ),
@@ -245,7 +278,7 @@ class _MyHomePageState extends State<MyHomePage> {
       errorWidget:
           (context, url, error) => CircleAvatar(
             radius: 100.0,
-            backgroundImage: AssetImage('assets/Luke.jpeg'),
+            backgroundImage: const AssetImage('assets/Luke.jpeg'),
           ),
     );
   }
@@ -281,47 +314,34 @@ class _MyHomePageState extends State<MyHomePage> {
           () async => showDialog(
             builder: (context) {
               return AlertDialog(
+                backgroundColor: currentTheme.cardColor,
                 icon: const Icon(Icons.announcement_outlined),
-                title: Text(AppLocalizations.of(context)!.emailActions),
-                content: Text(contactEmail, textAlign: TextAlign.center),
+                title: Text(
+                  AppLocalizations.of(context)!.emailActions,
+                  style: TextStyle(color: currentTheme.colorScheme.onSurface),
+                ),
+                content: Text(
+                  contactEmail,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: currentTheme.colorScheme.onSurface),
+                ),
                 actions: [
                   TextButton(
                     onPressed: () {
                       Clipboard.setData(ClipboardData(text: contactEmail));
                       Navigator.of(context).pop();
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          behavior: SnackBarBehavior.floating,
-                          margin: EdgeInsets.only(
-                            bottom: Style.defaultPadding * Style.tinyPadding,
-                            right: Style.defaultPadding * Style.defaultPadding,
-                            left: Style.defaultPadding * Style.defaultPadding,
+                      Utils.showNoti(
+                        content: Text(
+                          textAlign: TextAlign.justify,
+                          style: Style.bodyTextStyle(
+                            currentThemeMode: _themeMode,
+                          ).copyWith(
+                            color: currentTheme.colorScheme.onInverseSurface,
                           ),
-                          padding: EdgeInsetsDirectional.all(
-                            Style.smallPadding,
-                          ),
-                          // action: SnackBarAction(
-                          //   label: "label",
-                          //   onPressed: () {},
-                          // ),
-                          elevation: 10,
-                          backgroundColor:
-                              currentTheme.colorScheme.inverseSurface,
-                          dismissDirection: DismissDirection.horizontal,
-                          showCloseIcon: true,
-                          closeIconColor:
-                              currentTheme.colorScheme.onInverseSurface,
-                          content: Text(
-                            textAlign: TextAlign.justify,
-                            style: Style.bodyTextStyle(
-                              currentThemeMode: _themeMode,
-                            ).copyWith(
-                              color: currentTheme.colorScheme.onInverseSurface,
-                            ),
-                            AppLocalizations.of(context)!.copiedToClipboard,
-                          ),
+                          AppLocalizations.of(context)!.copiedToClipboard,
                         ),
-                        snackBarAnimationStyle: Style.animationStyle,
+                        context: context,
+                        currentTheme: currentTheme,
                       );
                     },
                     child: Text(AppLocalizations.of(context)!.copy),
@@ -335,7 +355,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     onPressed: () {
                       Navigator.of(context).pop();
-                      launchUrl(Uri.parse('mailto:$contactEmail'));
+                      Utils.openLink('mailto:$contactEmail');
                     },
                     child: Text(
                       AppLocalizations.of(context)!.sendEmail,
@@ -432,19 +452,122 @@ class _MyHomePageState extends State<MyHomePage> {
         position: PopupMenuPosition.under,
         menuPadding: EdgeInsets.all(Style.smallPadding),
         enableFeedback: true,
-        tooltip: "Settings: Theme",
+        tooltip: AppLocalizations.of(context)!.settingsBtnTooltip,
         icon: Icon(
           Icons.settings_applications,
           color: currentTheme.iconTheme.color,
-          semanticLabel: "Settings",
+          semanticLabel: AppLocalizations.of(context)!.settings,
         ),
-        onSelected: (String value) {
+        onSelected: (String value) async {
           switch (value) {
             case "change-theme":
               _changeTheme();
               break;
             case "change-language":
-              // _changeLanguage();
+              setState(() {
+                onSelectingLang = widget.locale.languageCode;
+              });
+              await showDialog(
+                context: context,
+                builder: (context) {
+                  return StatefulBuilder(
+                    builder: (context, setDialogState) {
+                      return AlertDialog(
+                        backgroundColor: currentTheme.cardColor,
+                        title: Text(
+                          AppLocalizations.of(context)!.changeLanguage,
+                          style: TextStyle(
+                            color: currentTheme.colorScheme.onSurface,
+                          ),
+                        ),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            ListTile(
+                              enableFeedback: true,
+                              title: Text(
+                                'ไทย',
+                                style: TextStyle(
+                                  color: currentTheme.colorScheme.onSurface,
+                                ),
+                              ),
+                              leading: Radio<String>(
+                                value: "th",
+                                groupValue: onSelectingLang,
+                                onChanged: (String? selectedLanguage) {
+                                  if (selectedLanguage != null) {
+                                    setDialogState(() {
+                                      onSelectingLang = selectedLanguage;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                            ListTile(
+                              enableFeedback: true,
+                              title: Text(
+                                'English',
+                                style: TextStyle(
+                                  color: currentTheme.colorScheme.onSurface,
+                                ),
+                              ),
+                              leading: Radio<String>(
+                                value: "en",
+                                groupValue: onSelectingLang,
+                                onChanged: (String? selectedLanguage) {
+                                  if (selectedLanguage != null) {
+                                    setDialogState(() {
+                                      onSelectingLang = selectedLanguage;
+                                    });
+                                  }
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.of(context).pop(),
+                            child: Text(AppLocalizations.of(context)!.cancel),
+                          ),
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              backgroundColor:
+                                  currentTheme.colorScheme.tertiaryContainer,
+                              foregroundColor:
+                                  currentTheme.colorScheme.onTertiaryContainer,
+                            ),
+                            onPressed: () {
+                              if (widget.locale.languageCode !=
+                                  onSelectingLang) {
+                                widget.changeLanguage(onSelectingLang);
+                              }
+                              Utils.showNoti(
+                                content: Text(
+                                  textAlign: TextAlign.justify,
+                                  style: Style.bodyTextStyle(
+                                    currentThemeMode: _themeMode,
+                                  ).copyWith(
+                                    color:
+                                        currentTheme
+                                            .colorScheme
+                                            .onInverseSurface,
+                                  ),
+                                  AppLocalizations.of(context)!.languageUpdated,
+                                ),
+                                context: context,
+                                currentTheme: currentTheme,
+                              );
+                              Navigator.of(context).pop();
+                            },
+                            child: Text(AppLocalizations.of(context)!.confirm),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+              );
               break;
           }
         },
@@ -453,6 +576,11 @@ class _MyHomePageState extends State<MyHomePage> {
               PopupMenuItem<String>(
                 value: 'change-theme',
                 child: ListTile(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      Style.defaultBorderRadius,
+                    ),
+                  ),
                   leading: Icon(
                     _themeMode == ThemeMode.light
                         ? Icons.dark_mode
@@ -461,14 +589,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   title: Text(AppLocalizations.of(context)!.changeTheme),
                 ),
               ),
-              // TODO: Add back in when language support is added
-              // PopupMenuItem<String>(
-              //   value: 'change-language',
-              //   child: ListTile(
-              //     leading: const Icon(Icons.language),
-              //     title: Text(AppLocalizations.of(context)!.changeLanguage),
-              //   ),
-              // ),
+              PopupMenuItem<String>(
+                value: 'change-language',
+                child: ListTile(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      Style.defaultBorderRadius,
+                    ),
+                  ),
+                  leading: const Icon(Icons.language),
+                  title: Text(AppLocalizations.of(context)!.changeLanguage),
+                ),
+              ),
             ],
       ),
     );
@@ -498,11 +630,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: IconButton(
                   tooltip: "GitHub",
                   onPressed:
-                      () => launchUrl(
-                        mode: LaunchMode.platformDefault,
-                        webOnlyWindowName: "_blank",
-                        Uri.parse("https://github.com/n-luke-th"),
-                      ),
+                      () => Utils.openLink("https://github.com/n-luke-th"),
                   icon: SvgPicture.asset(
                     "assets/github-mark.svg",
                     semanticsLabel: 'GitHub',
@@ -515,11 +643,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: IconButton(
                   tooltip: "LinkedIn",
                   onPressed:
-                      () => launchUrl(
-                        mode: LaunchMode.platformDefault,
-                        webOnlyWindowName: "_blank",
-                        Uri.parse("https://linkedin.com/in/aium-luke"),
-                      ),
+                      () => Utils.openLink("https://linkedin.com/in/aium-luke"),
                   icon: SvgPicture.asset(
                     "assets/linkedin-icon-svgrepo-com.svg",
                     semanticsLabel: 'LinkedIn',
@@ -532,11 +656,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: IconButton(
                   tooltip: "LeetCode",
                   onPressed:
-                      () => launchUrl(
-                        mode: LaunchMode.platformDefault,
-                        webOnlyWindowName: "_blank",
-                        Uri.parse("https://leetcode.com/n-luke/"),
-                      ),
+                      () => Utils.openLink("https://leetcode.com/n-luke/"),
                   icon: SvgPicture.asset(
                     "assets/leetcode-svgrepo-com.svg",
                     semanticsLabel: 'LeetCode',
@@ -551,12 +671,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<bool> openResume() {
-    return launchUrl(
-      mode: LaunchMode.platformDefault,
-      Uri.parse(
-        'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV1.2.pdf',
-      ),
-      webOnlyWindowName: "_blank",
+    return Utils.openLink(
+      'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV1.2.pdf',
     );
   }
 }

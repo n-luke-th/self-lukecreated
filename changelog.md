@@ -92,3 +92,4 @@ Created on May 22, 2023
 - Initial Development: Improved internal style file, redesigned of resume button, and other fixes on March 26, 2025 -> **0.0.3**
 - Initial Development: Added underlying of multi-languages support, and minor improvements on March 27, 2025 -> **0.0.4**
 - Initial Development: All basic info is added on March 27, 2025 -> **0.1.0**
+- Initial Development: Added multi-language support and overall improvements on March 28, 2025 -> **0.1.1**

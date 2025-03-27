@@ -116,12 +116,15 @@ class Style {
   /// Body text size of 16.
   static const double bodyTextSize = 16;
 
+  /// Text theme for the app.
+  static final textTheme = TextTheme().merge(GoogleFonts.krubTextTheme());
+
   /// Returns a TextStyle for titles based on the current theme mode.
   static TextStyle titleTextStyle({
     required ThemeMode currentThemeMode,
   }) => TextStyle(
     fontFamily: GoogleFonts.krub().fontFamily,
-    fontFamilyFallback: ["sans-serif"],
+    // fontFamilyFallback: ["sans-serif"],
     fontSize: titleTextSize,
     fontWeight: FontWeight.bold,
     color: currentThemeMode == ThemeMode.light ? textColorLight : textColorDark,
@@ -132,7 +135,7 @@ class Style {
     required ThemeMode currentThemeMode,
   }) => TextStyle(
     fontFamily: GoogleFonts.krub().fontFamily,
-    fontFamilyFallback: ["sans-serif"],
+    // fontFamilyFallback: ["sans-serif"],
     fontSize: subtitleTextSize,
     fontWeight: FontWeight.bold,
     color: currentThemeMode == ThemeMode.light ? textColorLight : textColorDark,
@@ -142,7 +145,7 @@ class Style {
   static TextStyle bodyTextStyle({required ThemeMode currentThemeMode}) =>
       TextStyle(
         fontFamily: GoogleFonts.krub().fontFamily,
-        fontFamilyFallback: ["sans-serif"],
+        // fontFamilyFallback: ["sans-serif"],
         fontSize: bodyTextSize,
         color:
             currentThemeMode == ThemeMode.light
@@ -156,7 +159,7 @@ class Style {
     Color? textColor,
   }) => TextStyle(
     fontFamily: GoogleFonts.krub().fontFamily,
-    fontFamilyFallback: ["sans-serif"],
+    // fontFamilyFallback: ["sans-serif"],
     fontSize: sectionTextSize,
     fontWeight: FontWeight.bold,
     color:
