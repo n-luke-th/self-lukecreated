@@ -153,11 +153,22 @@ class Style {
   /// Returns a TextStyle for section titles based on the current theme mode.
   static TextStyle sectionTextStyle({
     required ThemeMode currentThemeMode,
+    Color? textColor,
   }) => TextStyle(
     fontFamily: GoogleFonts.krub().fontFamily,
     fontFamilyFallback: ["sans-serif"],
     fontSize: sectionTextSize,
     fontWeight: FontWeight.bold,
-    color: currentThemeMode == ThemeMode.light ? textColorLight : textColorDark,
+    color:
+        textColor ??
+        (currentThemeMode == ThemeMode.light ? textColorLight : textColorDark),
+  );
+
+  // Animation Styles
+
+  /// Returns an AnimationStyle object with default values.
+  static AnimationStyle animationStyle = AnimationStyle(
+    curve: Curves.fastOutSlowIn,
+    duration: const Duration(milliseconds: 300),
   );
 }
