@@ -12,38 +12,68 @@ class AppLocalizationsTh extends AppLocalizations {
   String get helloWorld => 'สวัสดีชาวโลก!';
 
   @override
-  String get changeLanguage => 'Change Language';
+  String get changeLanguage => 'เปลี่ยนภาษา';
 
   @override
-  String get aboutMe => 'About Me';
+  String get aboutMe => 'เกี่ยวกับผม';
 
   @override
-  String get skills => 'Skills';
+  String get skills => 'ทักษะ';
 
   @override
-  String get email => 'Email';
+  String get email => 'อีเมล';
 
   @override
-  String get close => 'Close';
+  String get close => 'ปิด';
 
   @override
-  String get emailActions => 'Email Actions';
+  String get emailActions => 'ตัวเลือก';
 
   @override
-  String get sendEmail => 'Send Email';
+  String get sendEmail => 'ส่งอีเมล';
 
   @override
-  String get copy => 'Copy';
+  String get copy => 'คัดลอก';
 
   @override
-  String get copiedToClipboard => 'Copied to Clipboard';
+  String get copiedToClipboard => 'คัดลอกไปยังคลิปบอร์ดแล้ว';
 
   @override
-  String get changeTheme => 'Change Theme';
+  String get changeTheme => 'เปลี่ยนธีม';
 
   @override
   String get resume => 'Resume';
 
   @override
-  String get skillsAndInterests => 'Skills and Interests';
+  String get skillsAndInterests => 'ทักษะและความสนใจ';
+
+  @override
+  String get interests => 'สิ่งที่สนใจ';
+
+  @override
+  String get ok => 'ตกลง';
+
+  @override
+  String get cancel => 'ยกเลิก';
+
+  @override
+  String get confirm => 'ยืนยัน';
+
+  @override
+  String get languageUpdated => 'ภาษาอัปเดตแล้ว';
+
+  @override
+  String get settings => 'การตั้งค่า';
+
+  @override
+  String get settingsBtnTooltip => 'ตั้งค่า: ธีม/ภาษา';
+
+  @override
+  String get myName => 'กิตติพิชญ์ เอี่ยมพรสิน (ลุค)';
+
+  @override
+  String get introTxt => 'นักพัฒนาซอฟต์แวร์ที่ชื่นชอบการรังสรรค์นวัตกรรมและเรียนรู้เทคโนโลยีใหม่ๆ';
+
+  @override
+  String get langISpeak => 'ทักษะทางภาษา';
 }

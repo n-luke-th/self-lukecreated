@@ -46,4 +46,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get skillsAndInterests => 'Skills and Interests';
+
+  @override
+  String get interests => 'Interests';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get confirm => 'Confirm';
+
+  @override
+  String get languageUpdated => 'Language updated';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get settingsBtnTooltip => 'Settings: Theme/Language';
+
+  @override
+  String get myName => 'Kittipich Aiumbhornsin (Luke)';
+
+  @override
+  String get introTxt => 'Passionate software developer who loves building innovative solutions and exploring new technologies.';
+
+  @override
+  String get langISpeak => 'Languages I Speak';
 }
