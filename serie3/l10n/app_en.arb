@@ -6,5 +6,27 @@
     "description": "The conventional newborn programmer greeting"
   },
   "changeLanguage": "Change Language",
-  "@changeLanguage": {}
+  "@changeLanguage": {},
+  "aboutMe": "About Me",
+  "@aboutMe": {},
+  "skills": "Skills",
+  "@skills": {},
+  "email": "Email",
+  "@email": {},
+  "close": "Close",
+  "@close": {},
+  "emailActions": "Email Actions",
+  "@emailActions": {},
+  "sendEmail": "Send Email",
+  "@sendEmail": {},
+  "copy": "Copy",
+  "@copy": {},
+  "copiedToClipboard": "Copied to Clipboard",
+  "@copiedToClipboard": {},
+  "changeTheme": "Change Theme",
+  "@changeTheme": {},
+  "resume": "Resume",
+  "@resume": {},
+  "skillsAndInterests": "Skills and Interests",
+  "@skillsAndInterests": {}
 }
