@@ -95,8 +95,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final String contactEmail = 'contact@lukecreated.com';
   ThemeMode _themeMode = ThemeMode.system;
-  ThemeData get currentTheme =>
-      _themeMode == ThemeMode.light ? widget.lightTheme : widget.darkTheme;
+  ThemeData get currentTheme {
+    if (_themeMode == ThemeMode.light) {
+      return widget.lightTheme;
+    } else if (_themeMode == ThemeMode.dark) {
+      return widget.darkTheme;
+    } else {
+      final brightness = MediaQuery.of(context).platformBrightness;
+      _themeMode =
+          brightness == Brightness.light ? ThemeMode.light : ThemeMode.dark;
+      return brightness == Brightness.light
+          ? widget.lightTheme
+          : widget.darkTheme;
+    }
+  }
 
   late String onSelectingLang;
 
