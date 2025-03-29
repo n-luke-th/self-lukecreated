@@ -102,8 +102,10 @@ class _MyHomePageState extends State<MyHomePage> {
       return widget.darkTheme;
     } else {
       final brightness = MediaQuery.of(context).platformBrightness;
-      _themeMode =
-          brightness == Brightness.light ? ThemeMode.light : ThemeMode.dark;
+      setState(() {
+        _themeMode =
+            brightness == Brightness.light ? ThemeMode.light : ThemeMode.dark;
+      });
       return brightness == Brightness.light
           ? widget.lightTheme
           : widget.darkTheme;
