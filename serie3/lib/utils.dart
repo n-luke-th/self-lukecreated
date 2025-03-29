@@ -41,8 +41,8 @@ class Utils {
         behavior: SnackBarBehavior.floating,
         margin: EdgeInsets.only(
           bottom: Style.defaultPadding * Style.tinyPadding,
-          right: Style.defaultPadding * Style.defaultPadding,
-          left: Style.defaultPadding * Style.defaultPadding,
+          right: Style.defaultPadding * Style.tinyPadding,
+          left: Style.defaultPadding * Style.tinyPadding,
         ),
         padding: EdgeInsetsDirectional.all(Style.smallPadding),
         // action: SnackBarAction(

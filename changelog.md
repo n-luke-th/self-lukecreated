@@ -95,3 +95,4 @@ Created on May 22, 2023
 - Initial Development: Added multi-language support and overall improvements on March 28, 2025 -> **0.1.1**
 - Maintenance: Updated the resume link, added education section and more translation, and other improvements on March 29, 2025 -> **0.1.2**
 - Maintenance: Fixed the issue where the initial theme is not matched with the device default's theme on March 29, 2025 -> **0.1.3**
+- Maintenance: Fixed the issue where the initial theme is not matched with the device default's theme, and other improvements on March 29, 2025 -> **0.1.4**
