@@ -51,6 +51,9 @@ class AppLocalizationsTh extends AppLocalizations {
   String get interests => 'สิ่งที่สนใจ';
 
   @override
+  String get softSkills => 'จรณทักษะ (Soft Skills)';
+
+  @override
   String get ok => 'ตกลง';
 
   @override
@@ -76,4 +79,19 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get langISpeak => 'ทักษะทางภาษา';
+
+  @override
+  String get langISpeak_th => 'ภาษาไทย';
+
+  @override
+  String get langISpeak_en => 'ภาษาอังกฤษ';
+
+  @override
+  String get educationDescription => 'วิทยาศาสตรบัณฑิต สาขาวิชาเทคโนโลยีสารสนเทศและการสื่อสาร (นานาชาติ) มหาวิทยาลัยมหิดล\nสิงหาคม 2564 - มกราคม 2568';
+
+  @override
+  String get education => 'การศึกษา';
+
+  @override
+  String get langISpeak_zh => 'ภาษาจีน';
 }

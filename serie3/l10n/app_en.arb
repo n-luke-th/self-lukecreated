@@ -31,6 +31,8 @@
   "@skillsAndInterests": {},
   "interests": "Interests",
   "@interests": {},
+  "softSkills": "Soft Skills",
+  "@softSkills": {},
   "ok": "OK",
   "@ok": {},
   "cancel": "Cancel",
@@ -48,5 +50,15 @@
   "introTxt": "Passionate software developer who loves building innovative solutions and exploring new technologies.",
   "@introTxt": {},
   "langISpeak": "Languages I Speak",
-  "@langISpeak": {}
+  "@langISpeak": {},
+  "langISpeak_th": "Thai",
+  "@langISpeak_th": {},
+  "langISpeak_en": "English",
+  "@langISpeak_en": {},
+  "educationDescription": "Bechelor of Science in Information and Communication Technology (International Program), Mahidol University\nAugust 2021 -  January 2025",
+  "@educationDescription": {},
+  "education": "Education",
+  "@education": {},
+  "langISpeak_zh": "Chinese",
+  "@langISpeak_zh": {}
 }

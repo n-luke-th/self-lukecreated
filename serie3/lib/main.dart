@@ -152,7 +152,30 @@ class _MyHomePageState extends State<MyHomePage> {
         Style.largeVerticalSpace,
         _buildEmailTxtButton(),
         Style.verticalSpace,
+        _buildEducation(),
+        Style.verticalSpace,
         _buildSkills(),
+      ],
+    );
+  }
+
+  Column _buildEducation() {
+    return Column(
+      children: [
+        SelectableText(
+          textAlign: TextAlign.center,
+          AppLocalizations.of(context)!.education,
+          style: Style.sectionTextStyle(
+            currentThemeMode: _themeMode,
+            overrideTextColor: currentTheme.colorScheme.onPrimaryContainer,
+          ),
+        ),
+        Style.smallVerticalSpace,
+        SelectableText(
+          AppLocalizations.of(context)!.educationDescription,
+          style: Style.bodyTextStyle(currentThemeMode: _themeMode),
+          textAlign: TextAlign.center,
+        ),
       ],
     );
   }
@@ -165,7 +188,7 @@ class _MyHomePageState extends State<MyHomePage> {
           AppLocalizations.of(context)!.skillsAndInterests,
           style: Style.sectionTextStyle(
             currentThemeMode: _themeMode,
-            textColor: currentTheme.colorScheme.onPrimaryContainer,
+            overrideTextColor: currentTheme.colorScheme.onPrimaryContainer,
           ),
         ),
         Style.smallVerticalSpace,
@@ -185,7 +208,7 @@ class _MyHomePageState extends State<MyHomePage> {
         Style.verticalSpace,
         // Soft Skills
         _subSkillsGroup(
-          title: "💙 Soft Skills:",
+          title: "💙 ${AppLocalizations.of(context)!.softSkills}:",
           skills: [
             _skillChip('Teamwork & Collaboration'),
             _skillChip('Adaptability'),
@@ -197,15 +220,21 @@ class _MyHomePageState extends State<MyHomePage> {
         _subSkillsGroup(
           title: "🌐 ${AppLocalizations.of(context)!.langISpeak}:",
           skills: [
-            _skillChip('English (Confident)'),
-            _skillChip('Thai (Native)'),
-            _skillChip('Chinese (Intermediate)'),
+            _skillChip(
+              '${AppLocalizations.of(context)!.langISpeak_en} (Confident)',
+            ),
+            _skillChip(
+              '${AppLocalizations.of(context)!.langISpeak_th} (Native)',
+            ),
+            _skillChip(
+              '${AppLocalizations.of(context)!.langISpeak_zh} (Intermediate)',
+            ),
           ],
         ),
         Style.verticalSpace,
         // Interests
         _subSkillsGroup(
-          title: "🎯 Interests:",
+          title: "🎯 ${AppLocalizations.of(context)!.interests}:",
           skills: [
             _skillChip('Full Stack development'),
             _skillChip('Mobile app development'),
@@ -245,7 +274,10 @@ class _MyHomePageState extends State<MyHomePage> {
         SelectableText(
           textAlign: TextAlign.center,
           AppLocalizations.of(context)!.myName,
-          style: Style.titleTextStyle(currentThemeMode: _themeMode),
+          style: Style.titleTextStyle(
+            currentThemeMode: _themeMode,
+            overrideTextColor: currentTheme.colorScheme.onSurface,
+          ),
         ),
         Style.smallVerticalSpace,
         SelectableText(
@@ -672,7 +704,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<bool> openResume() {
     return Utils.openLink(
-      'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV1.2.pdf',
+      'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV1.3.pdf',
     );
   }
 }

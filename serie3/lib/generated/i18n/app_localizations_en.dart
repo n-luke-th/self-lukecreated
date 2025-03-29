@@ -51,6 +51,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get interests => 'Interests';
 
   @override
+  String get softSkills => 'Soft Skills';
+
+  @override
   String get ok => 'OK';
 
   @override
@@ -76,4 +79,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get langISpeak => 'Languages I Speak';
+
+  @override
+  String get langISpeak_th => 'Thai';
+
+  @override
+  String get langISpeak_en => 'English';
+
+  @override
+  String get educationDescription => 'Bechelor of Science in Information and Communication Technology (International Program), Mahidol University\nAugust 2021 -  January 2025';
+
+  @override
+  String get education => 'Education';
+
+  @override
+  String get langISpeak_zh => 'Chinese';
 }
