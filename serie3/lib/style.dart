@@ -73,25 +73,25 @@ class Style {
   // Colors
 
   /// Primary light color: Color(0xFF1565C0).
-  static const Color primaryColorLight = Color(0xFF1565C0); // indicator color
+  static const Color primaryColorLight = Color(0xFF1565C0); //
 
   /// Secondary light color: Color(0xFF1867C3).
-  static const Color secondaryColorLight = Color(0xFF1867C3); // 11
+  static const Color secondaryColorLight = Color(0xFF1867C3); //
 
   /// Background light color: Color(0xccF4F9FE).
-  static const Color backgroundColorLight = Color(0xccF4F9FE); // surface color
+  static const Color backgroundColorLight = Color(0xccF4F9FE); //
 
   /// Text light color: Color(0xFF727208).
   static const Color textColorLight = Color(0xFF727208);
 
   /// Primary dark color: Color(0xFF00BCD4).
-  static const Color primaryColorDark = Color(0xFF00BCD4); // indicator color
+  static const Color primaryColorDark = Color(0xFF00BCD4); //
 
   /// Secondary dark color: Color(0xFF38CEE6).
-  static const Color secondaryColorDark = Color(0xFF38CEE6); // 11
+  static const Color secondaryColorDark = Color(0xFF38CEE6); //
 
   /// Background dark color: Color(0x800C252B).
-  static const Color backgroundColorDark = Color(0x800C252B); // surface color
+  static const Color backgroundColorDark = Color(0x800C252B); //
 
   /// Text dark color: Color(0xFF979736).
   static const Color textColorDark = Color(0xFF979736);
@@ -122,12 +122,15 @@ class Style {
   /// Returns a TextStyle for titles based on the current theme mode.
   static TextStyle titleTextStyle({
     required ThemeMode currentThemeMode,
+    Color? overrideTextColor,
   }) => TextStyle(
     fontFamily: GoogleFonts.krub().fontFamily,
     // fontFamilyFallback: ["sans-serif"],
     fontSize: titleTextSize,
     fontWeight: FontWeight.bold,
-    color: currentThemeMode == ThemeMode.light ? textColorLight : textColorDark,
+    color:
+        overrideTextColor ??
+        (currentThemeMode == ThemeMode.light ? textColorLight : textColorDark),
   );
 
   /// Returns a TextStyle for subtitles based on the current theme mode.
@@ -156,14 +159,14 @@ class Style {
   /// Returns a TextStyle for section titles based on the current theme mode.
   static TextStyle sectionTextStyle({
     required ThemeMode currentThemeMode,
-    Color? textColor,
+    Color? overrideTextColor,
   }) => TextStyle(
     fontFamily: GoogleFonts.krub().fontFamily,
     // fontFamilyFallback: ["sans-serif"],
     fontSize: sectionTextSize,
     fontWeight: FontWeight.bold,
     color:
-        textColor ??
+        overrideTextColor ??
         (currentThemeMode == ThemeMode.light ? textColorLight : textColorDark),
   );
 

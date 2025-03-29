@@ -179,6 +179,12 @@ abstract class AppLocalizations {
   /// **'Interests'**
   String get interests;
 
+  /// No description provided for @softSkills.
+  ///
+  /// In en, this message translates to:
+  /// **'Soft Skills'**
+  String get softSkills;
+
   /// No description provided for @ok.
   ///
   /// In en, this message translates to:
@@ -232,6 +238,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Languages I Speak'**
   String get langISpeak;
+
+  /// No description provided for @langISpeak_th.
+  ///
+  /// In en, this message translates to:
+  /// **'Thai'**
+  String get langISpeak_th;
+
+  /// No description provided for @langISpeak_en.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get langISpeak_en;
+
+  /// No description provided for @educationDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Bechelor of Science in Information and Communication Technology (International Program), Mahidol University\nAugust 2021 -  January 2025'**
+  String get educationDescription;
+
+  /// No description provided for @education.
+  ///
+  /// In en, this message translates to:
+  /// **'Education'**
+  String get education;
+
+  /// No description provided for @langISpeak_zh.
+  ///
+  /// In en, this message translates to:
+  /// **'Chinese'**
+  String get langISpeak_zh;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
