@@ -718,7 +718,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<bool> openResume() {
     return Utils.openLink(
-      'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV1.3.pdf',
+      'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV2.pdf',
     );
   }
 }

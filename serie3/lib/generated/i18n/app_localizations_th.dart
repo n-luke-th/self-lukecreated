@@ -75,7 +75,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get myName => 'กิตติพิชญ์ เอี่ยมพรสิน (ลุค)';
 
   @override
-  String get introTxt => 'นักพัฒนาซอฟต์แวร์ที่ชื่นชอบการรังสรรค์นวัตกรรมและเรียนรู้เทคโนโลยีใหม่ๆ';
+  String get introTxt =>
+      'นักพัฒนาซอฟต์แวร์ที่ชื่นชอบการรังสรรค์นวัตกรรมและเรียนรู้เทคโนโลยีใหม่ๆ';
 
   @override
   String get langISpeak => 'ทักษะทางภาษา';
@@ -87,7 +88,8 @@ class AppLocalizationsTh extends AppLocalizations {
   String get langISpeak_en => 'ภาษาอังกฤษ';
 
   @override
-  String get educationDescription => 'วิทยาศาสตรบัณฑิต สาขาวิชาเทคโนโลยีสารสนเทศและการสื่อสาร (นานาชาติ) มหาวิทยาลัยมหิดล\nสิงหาคม 2564 - มกราคม 2568';
+  String get educationDescription =>
+      'วิทยาศาสตรบัณฑิต สาขาวิชาเทคโนโลยีสารสนเทศและการสื่อสาร (นานาชาติ) มหาวิทยาลัยมหิดล\nสิงหาคม 2564 - มกราคม 2568';
 
   @override
   String get education => 'การศึกษา';
