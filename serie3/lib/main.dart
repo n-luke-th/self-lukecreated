@@ -306,6 +306,7 @@ class _MyHomePageState extends State<MyHomePage> {
   CachedNetworkImage _buildProfilePic() {
     return CachedNetworkImage(
       imageUrl:
+          // "https://assets.lukecreated.com/static/images/self.luke/Luke.webp"
           "https://assets.lukecreated.com/static/images/self.luke/Luke.jpeg",
       // "https://cdn.pixabay.com/photo/2017/03/30/03/48/pineapple-2187124_1280.png",
       imageBuilder:
@@ -324,7 +325,7 @@ class _MyHomePageState extends State<MyHomePage> {
       errorWidget:
           (context, url, error) => CircleAvatar(
             radius: 100.0,
-            backgroundImage: const AssetImage('assets/Luke.jpeg'),
+            backgroundImage: const AssetImage('assets/Luke.webp'),
           ),
     );
   }

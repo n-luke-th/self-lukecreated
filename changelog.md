@@ -14,6 +14,32 @@ This changelog is using format of [Keep a Changelog](https://keepachangelog.com/
 
 - none
 
+## Maintenance: [`0.1.51`] - 2025-07-14
+
+### Added
+
+- none
+
+### Changed
+
+- none
+
+### Deprecated
+
+- none
+
+### Removed
+
+- none
+
+### Fixed
+
+- Fixed the fallback profile picture to `webp` format instead of `.jpeg`.
+
+### Other
+
+- none
+
 ## Maintenance: [`0.1.5`] - 2025-07-14
 
 ### Added
