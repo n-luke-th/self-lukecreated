@@ -75,7 +75,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get myName => 'Kittipich Aiumbhornsin (Luke)';
 
   @override
-  String get introTxt => 'Passionate software developer who loves building innovative solutions and exploring new technologies.';
+  String get introTxt =>
+      'Passionate software developer who loves building innovative solutions and exploring new technologies.';
 
   @override
   String get langISpeak => 'Languages I Speak';
@@ -87,7 +88,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get langISpeak_en => 'English';
 
   @override
-  String get educationDescription => 'Bechelor of Science in Information and Communication Technology (International Program), Mahidol University\nAugust 2021 -  January 2025';
+  String get educationDescription =>
+      'Bechelor of Science in Information and Communication Technology (International Program), Mahidol University\nAugust 2021 -  January 2025';
 
   @override
   String get education => 'Education';

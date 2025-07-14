@@ -1,5 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/material.dart'
+    show
+        AnimationStyle,
+        Color,
+        Curves,
+        FontWeight,
+        SizedBox,
+        TextStyle,
+        TextTheme,
+        ThemeMode;
+import 'package:google_fonts/google_fonts.dart' show GoogleFonts;
 
 class Style {
   // Space & Sizes
