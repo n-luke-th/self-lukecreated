@@ -14,6 +14,33 @@ This changelog is using format of [Keep a Changelog](https://keepachangelog.com/
 
 - none
 
+## Maintenance: [`0.1.6`] - 2025-12-28
+
+### Added
+
+- Career/Experience section added.
+
+### Changed
+
+- Updated resume link to version 3.0.
+- `MyApp` class now renamed to `LukeCreatedWeb`.
+
+### Deprecated
+
+- none
+
+### Removed
+
+- Removed LeetCode link.
+
+### Fixed
+
+- none
+
+### Other
+
+- Upgraded dependencies constraints.
+
 ## Maintenance: [`0.1.51`] - 2025-07-14
 
 ### Added

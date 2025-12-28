@@ -10,17 +10,17 @@ import 'package:serie3/style.dart';
 import 'package:serie3/utils.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(LukeCreatedWeb());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class LukeCreatedWeb extends StatefulWidget {
+  const LukeCreatedWeb({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<LukeCreatedWeb> createState() => _LukeCreatedWebState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _LukeCreatedWebState extends State<LukeCreatedWeb> {
   Locale _locale = Locale('en');
   final ThemeData _lightTheme = ThemeData.light().copyWith(
     colorScheme: ColorScheme.fromSeed(
@@ -166,9 +166,32 @@ class _MyHomePageState extends State<MyHomePage> {
         Style.largeVerticalSpace,
         _buildEmailTxtButton(),
         Style.verticalSpace,
+        _buildCareer(),
+        Style.verticalSpace,
         _buildEducation(),
         Style.verticalSpace,
         _buildSkills(),
+      ],
+    );
+  }
+
+  Column _buildCareer() {
+    return Column(
+      children: [
+        SelectableText(
+          textAlign: TextAlign.center,
+          AppLocalizations.of(context)!.career,
+          style: Style.sectionTextStyle(
+            currentThemeMode: _themeMode,
+            overrideTextColor: currentTheme.colorScheme.onPrimaryContainer,
+          ),
+        ),
+        Style.smallVerticalSpace,
+        SelectableText(
+          AppLocalizations.of(context)!.careerDescription,
+          style: Style.bodyTextStyle(currentThemeMode: _themeMode),
+          textAlign: TextAlign.center,
+        ),
       ],
     );
   }
@@ -251,10 +274,10 @@ class _MyHomePageState extends State<MyHomePage> {
           title: "🎯 ${AppLocalizations.of(context)!.interests}:",
           skills: [
             _skillChip('Full Stack development'),
-            _skillChip('Mobile app development'),
+            _skillChip('Mobile App development'),
             _skillChip("ML & DL"),
             _skillChip('Cloud Computing'),
-            _skillChip("Chinese Culture"),
+            _skillChip("System Design"),
           ],
         ),
       ],
@@ -294,6 +317,13 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         Style.smallVerticalSpace,
+        Text(
+          "Software Developer",
+          style: Style.subtitleTextStyle(
+            currentThemeMode: _themeMode,
+          ).copyWith(fontSize: 22),
+        ),
+        Style.smallVerticalSpace,
         SelectableText(
           AppLocalizations.of(context)!.introTxt,
           style: Style.bodyTextStyle(currentThemeMode: _themeMode),
@@ -306,9 +336,8 @@ class _MyHomePageState extends State<MyHomePage> {
   CachedNetworkImage _buildProfilePic() {
     return CachedNetworkImage(
       imageUrl:
-          // "https://assets.lukecreated.com/static/images/self.luke/Luke.webp"
-          "https://assets.lukecreated.com/static/images/self.luke/Luke.jpeg",
-      // "https://cdn.pixabay.com/photo/2017/03/30/03/48/pineapple-2187124_1280.png",
+          "https://assets.lukecreated.com/static/images/self.luke/Luke.webp",
+      // "https://assets.lukecreated.com/static/images/self.luke/Luke.jpeg",
       imageBuilder:
           (context, imageProvider) => CircleAvatar(
             radius: 100.0,
@@ -697,19 +726,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              // LeetCode
-              SizedBox(
-                width: Style.defaultIconShortcutSize,
-                child: IconButton(
-                  tooltip: "LeetCode",
-                  onPressed:
-                      () => Utils.openLink("https://leetcode.com/n-luke/"),
-                  icon: SvgPicture.asset(
-                    "assets/leetcode-svgrepo-com.svg",
-                    semanticsLabel: 'LeetCode',
-                  ),
-                ),
-              ),
+              // // LeetCode
+              // SizedBox(
+              //   width: Style.defaultIconShortcutSize,
+              //   child: IconButton(
+              //     tooltip: "LeetCode",
+              //     onPressed:
+              //         () => Utils.openLink("https://leetcode.com/n-luke/"),
+              //     icon: SvgPicture.asset(
+              //       "assets/leetcode-svgrepo-com.svg",
+              //       semanticsLabel: 'LeetCode',
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
@@ -719,7 +748,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<bool> openResume() {
     return Utils.openLink(
-      'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV2.pdf',
+      'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV3.pdf',
     );
   }
 }

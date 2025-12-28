@@ -95,5 +95,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get education => 'Education';
 
   @override
+  String get career => 'Experience';
+
+  @override
+  String get careerDescription =>
+      'Computer System Officer (Networking System)\nTourism Authority of Thailand\nDecember 2025 - Present';
+
+  @override
   String get langISpeak_zh => 'Chinese';
 }
