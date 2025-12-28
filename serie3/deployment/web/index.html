@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="Luke" />
+    <meta
+      name="description"
+      content="LukeCreated is a personal website of Luke, a software developer."
+    />
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="LukeCreated" />
+    <link rel="apple-touch-icon" href="icons/apple-icon.png" />
+    <link rel="shortcut icon" href="/luke-favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/luke-favicon.ico" type="image/x-icon" />
+    <title>LukeCreated</title>
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Krub&display=swap");
+      .krub-regular {
+        font-family: "Krub", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      body {
+        background-color: #003a44;
+        color: #cce1fe;
+        margin: 2%;
+        padding: 4%;
+      }
+
+      @keyframes fadeDots {
+        0%,
+        100% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+    <div
+      id="loading"
+      class="krub-regular"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #003a44;
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: fadeDots 1.4s infinite ease-in-out;
+      "
+    >
+      ...LOADING...
+    </div>
+  </body>
+  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    window.addEventListener("flutter-first-frame", function () {
+      document.getElementById("loading").style.display = "none";
+      // document.body.removeChild(document.getElementById("loading"));
+      console.log("LukeCreated website is ready!");
+    });
+  </script>
+</html>
