@@ -72,7 +72,7 @@ class AppLocalizationsTh extends AppLocalizations {
   String get settingsBtnTooltip => 'ตั้งค่า: ธีม/ภาษา';
 
   @override
-  String get myName => 'กิตติพิชญ์ เอี่ยมพรสิน (ลุค)';
+  String get myName => 'กิตติพิชญ์ เอี่ยมพรสิน (กานต์)';
 
   @override
   String get introTxt =>
@@ -93,6 +93,13 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get education => 'การศึกษา';
+
+  @override
+  String get career => 'ประสบการณ์การทำงาน';
+
+  @override
+  String get careerDescription =>
+      'พนักงานระบบงานคอมพิวเตอร์ 3\nการท่องเที่ยวแห่งประเทศไทย\nธันวาคม 2568 - ปัจจุบัน';
 
   @override
   String get langISpeak_zh => 'ภาษาจีน';

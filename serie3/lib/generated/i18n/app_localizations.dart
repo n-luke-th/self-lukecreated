@@ -266,6 +266,18 @@ abstract class AppLocalizations {
   /// **'Education'**
   String get education;
 
+  /// No description provided for @career.
+  ///
+  /// In en, this message translates to:
+  /// **'Experience'**
+  String get career;
+
+  /// No description provided for @careerDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Computer System Officer (Networking System)\nTourism Authority of Thailand\nDecember 2025 - Present'**
+  String get careerDescription;
+
   /// No description provided for @langISpeak_zh.
   ///
   /// In en, this message translates to:
