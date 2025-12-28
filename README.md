@@ -25,6 +25,18 @@ Current version of the website is built with Flutter powered with dependencies:
 flutter run -d chrome --web-port 5555
 ```
 
+## Deployment
+
+- run following automatic deployment:
+
+```bash
+flutter clean
+flutter pub get
+flutter build web --release --output=deployment/web
+```
+
+**Better improve the CI/CD practice, especially commit build folder to repo**
+
 ## Disclaimer
 
 The author is _**not affiliated**_ with any **source(s)/product(s)/tools** listed/used in this project.

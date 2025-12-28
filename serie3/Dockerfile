@@ -5,7 +5,7 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy Flutter web build files
-COPY build/web /usr/share/nginx/html
+COPY deployment/web /usr/share/nginx/html
 
 # Expose http port
 EXPOSE 80
