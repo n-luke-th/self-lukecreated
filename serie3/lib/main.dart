@@ -258,7 +258,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: "🌐 ${AppLocalizations.of(context)!.langISpeak}:",
           skills: [
             _skillChip(
-              '${AppLocalizations.of(context)!.langISpeak_en} (Confident)',
+              '${AppLocalizations.of(context)!.langISpeak_en} (Professional Working Proficiency)',
             ),
             _skillChip(
               '${AppLocalizations.of(context)!.langISpeak_th} (Native)',
@@ -748,7 +748,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<bool> openResume() {
     return Utils.openLink(
-      'https://assets.lukecreated.com/public/resume/Luke-CoderResumeV3.pdf',
+      'https://assets.lukecreated.com/public/resume/Luke_Resume-v4.pdf',
     );
   }
 }

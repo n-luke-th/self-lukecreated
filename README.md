@@ -27,6 +27,7 @@ flutter run -d chrome --web-port 5555
 
 ## Deployment
 
+- commit and push to the repository.
 - run following automatic deployment:
 
 ```bash
