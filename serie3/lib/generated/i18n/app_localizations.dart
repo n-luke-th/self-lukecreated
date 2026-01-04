@@ -233,7 +233,7 @@ abstract class AppLocalizations {
   /// No description provided for @introTxt.
   ///
   /// In en, this message translates to:
-  /// **'Passionate software developer who loves building innovative solutions and exploring new technologies.'**
+  /// **'Early-career Software Developer with hands-on experience building full-stack web and mobile applications using Flutter, Firebase, and AWS. Currently working in IT operations while designing internal and personal software systems, with active projects showcased on GitHub. Strong interest in product-focused, data-driven engineering environments, with the ability to learn new technologies quickly and contribute across frontend, backend APIs, and cloud infrastructure.'**
   String get introTxt;
 
   /// No description provided for @langISpeak.
