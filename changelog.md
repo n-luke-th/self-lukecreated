@@ -14,6 +14,33 @@ This changelog is using format of [Keep a Changelog](https://keepachangelog.com/
 
 - none
 
+## Maintenance: [`0.1.7`] - 2026-01-05
+
+### Added
+
+- none
+
+### Changed
+
+- Updated resume link to version 4.0.
+- Adjusted communication language level wording.
+
+### Deprecated
+
+- none
+
+### Removed
+
+- none
+
+### Fixed
+
+- none
+
+### Other
+
+- none
+
 ## Maintenance: [`0.1.6`] - 2025-12-28
 
 ### Added
