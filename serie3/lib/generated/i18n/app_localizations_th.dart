@@ -76,7 +76,7 @@ class AppLocalizationsTh extends AppLocalizations {
 
   @override
   String get introTxt =>
-      'นักพัฒนาซอฟต์แวร์ที่ชื่นชอบการรังสรรค์นวัตกรรมและเรียนรู้เทคโนโลยีใหม่ๆ';
+      'Early-career Software Developer with hands-on experience building full-stack web and mobile applications using Flutter, Firebase, and AWS. Currently working in IT operations while designing internal and personal software systems, with active projects showcased on GitHub. Strong interest in product-focused, data-driven engineering environments, with the ability to learn new technologies quickly and contribute across frontend, backend APIs, and cloud infrastructure.';
 
   @override
   String get langISpeak => 'ทักษะทางภาษา';
