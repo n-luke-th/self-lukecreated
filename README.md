@@ -27,14 +27,15 @@ flutter run -d chrome --web-port 5555
 
 ## Deployment
 
-- commit and push to the repository.
-- run following automatic deployment:
+- run following command for build:
 
 ```bash
 flutter clean
 flutter pub get
 flutter build web --release --output=deployment/web
 ```
+
+- commit and push to the repository.
 
 **Better improve the CI/CD practice, especially commit build folder to repo**
 
