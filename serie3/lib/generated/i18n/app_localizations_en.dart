@@ -76,7 +76,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get introTxt =>
-      'Early-career Software Developer with hands-on experience building full-stack web and mobile applications using Flutter, Firebase, and AWS. Currently working in IT operations while designing internal and personal software systems, with active projects showcased on GitHub. Strong interest in product-focused, data-driven engineering environments, with the ability to learn new technologies quickly and contribute across frontend, backend APIs, and cloud infrastructure.';
+      'Early-career Software Developer with hands-on experience building full-stack web and mobile applications using Flutter, Firebase, and backend APIs. Currently working in IT operations while contributing to internal software initiatives and developing personal and academic projects showcased on GitHub. Motivated to grow inproduct-focused, data-driven engineering teams and comfortable contributing across frontend and backend systems.';
 
   @override
   String get langISpeak => 'Languages I Speak';

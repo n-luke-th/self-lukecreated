@@ -732,7 +732,7 @@ class _MyHomePageState extends State<MyHomePage> {
               //   child: IconButton(
               //     tooltip: "LeetCode",
               //     onPressed:
-              //         () => Utils.openLink("https://leetcode.com/n-luke/"),
+              //         () => Utils.openLink("https://leetcode.com/n-luke-th/"),
               //     icon: SvgPicture.asset(
               //       "assets/leetcode-svgrepo-com.svg",
               //       semanticsLabel: 'LeetCode',
@@ -748,7 +748,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<bool> openResume() {
     return Utils.openLink(
-      'https://assets.lukecreated.com/public/resume/Luke_Resume-v4.pdf',
+      'https://assets.lukecreated.com/public/resume/Kittipich_Resume-v4a.pdf',
     );
   }
 }
