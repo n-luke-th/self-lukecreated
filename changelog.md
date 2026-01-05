@@ -14,6 +14,33 @@ This changelog is using format of [Keep a Changelog](https://keepachangelog.com/
 
 - none
 
+## Maintenance: [`0.1.9`] - 2026-01-05
+
+### Added
+
+- none
+
+### Changed
+
+- Updated summary/introduction text to better reflect current skills and experience.
+- Updated resume link to version 4a.
+
+### Deprecated
+
+- none
+
+### Removed
+
+- none
+
+### Fixed
+
+- none
+
+### Other
+
+- none
+
 ## Maintenance: [`0.1.8`] - 2026-01-05
 
 ### Added
