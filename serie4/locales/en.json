@@ -1,0 +1,83 @@
+{
+  "summary": "Full Stack Software Developer with hands-on experience designing and implementing web and mobile applications across frontend, backend, and cloud infrastructure. Experienced in building secure API-driven systems using Flutter, Firebase, and AWS serverless services. Currently contributing to internal system improvement initiatives within a government organization, with exposure to requirements gathering and system workflow design. Comfortable working across the full software lifecycle — from system design to deployment.",
+
+  "projects": [
+    {
+      "name": "Bookkeeping App",
+      "description": "Flutter + Firebase + R2 secure storage system.",
+      "link": "https://github.com/n-luke-th/"
+    }
+  ],
+
+  "skills": [
+    {
+      "category": "Languages",
+      "items": ["Dart", "Python", "C#", "TypeScript", "HTML", "CSS"]
+    },
+    {
+      "category": "Cloud & Infrastructure",
+      "items": [
+        "AWS",
+        "GCP",
+        "Cloudflare R2",
+        "CloudFront",
+        "Firebase",
+        "Docker"
+      ]
+    },
+    {
+      "category": "Tools & Practices",
+      "items": [
+        "Git",
+        "Postman",
+        "System Design",
+        "Data Modeling",
+        "Requirements Analysis"
+      ]
+    },
+    {
+      "category": "Backend & APIs",
+      "items": [
+        "RESTful APIs",
+        "Firebase Authentication",
+        "Firestore",
+        "AWS Lambda",
+        "API Gateway",
+        "FastAPI",
+        "Django"
+      ]
+    }
+  ],
+
+  "experience": [
+    {
+      "role": "Computer System Officer (Networking System)",
+      "company": "Tourism Authority of Thailand",
+      "points": [
+        "Maintained enterprise network infrastructure supporting multiple departments and daily operational users, ensuring high system availability",
+        "Designed system workflows, user roles, and data flow architecture to centralize ticket lifecycle tracking",
+        "Conducted stakeholder interviews with director-level management to gather requirements and translated business processes into functional system specifications"
+      ]
+    }
+  ],
+
+  "socialAndContact": [
+    {
+      "label": "Resume",
+      "link": "https://assets.lukecreated.com/public/resume/Kittipich_Resume-v4b.pdf"
+    },
+    {
+      "label": "Email",
+      "link": "mailto:contact@lukecreated.com"
+    },
+    {
+      "label": "GitHub",
+      "link": "https://github.com/n-luke-th/"
+    },
+
+    {
+      "label": "LinkedIn",
+      "link": "https://linkedin.com/in/aium-luke"
+    }
+  ]
+}
