@@ -1,0 +1,141 @@
+<!doctype html>
+<html
+  lang="en"
+  class="scroll-smooth"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Kittipich Aiumbhornsin | Software Developer</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body
+    class="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-200 font-mono transition-colors duration-300"
+  >
+    <!-- Navbar -->
+    <header
+      class="fixed w-full bg-white/80 dark:bg-neutral-950/80 backdrop-blur border-b border-neutral-200 dark:border-neutral-800 z-50"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-lg font-semibold tracking-tight">~/kittipich</h1>
+
+        <div class="flex gap-4 items-center text-sm">
+          <!-- <button
+            id="localeToggle"
+            class="hover:underline"
+          >
+            EN
+          </button> -->
+          <button
+            id="themeToggle"
+            class="hover:underline"
+          >
+            ☾/☀︎
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-24 max-w-5xl mx-auto px-6 space-y-20">
+      <!-- header title -->
+      <section id="headerTitle">
+        <h1 class="text-2xl mb-1 pb-3 text-center">Kittipich Aiumbhornsin</h1>
+        <h4 class="text-center">Software Developer</h4>
+      </section>
+      <!-- Contact -->
+      <section id="socialAndContact">
+        <h2
+          class="text-xl mb-4 border-b border-neutral-300 dark:border-neutral-700 pb-3"
+        >
+          Social & Contact
+        </h2>
+        <div
+          id="socialAndContactContainer"
+          class="grid md:grid-cols-2 gap-6"
+        ></div>
+      </section>
+      <!-- Summary -->
+      <section id="summary">
+        <h2
+          class="text-xl mb-4 border-b border-neutral-300 dark:border-neutral-700 pb-3"
+        >
+          Summary
+        </h2>
+        <p
+          id="summaryContent"
+          class="leading-relaxed"
+        ></p>
+      </section>
+
+      <!-- Projects
+      <section id="projects">
+        <h2
+          class="text-xl mb-4 border-b border-neutral-300 dark:border-neutral-700 pb-3"
+        >
+          Projects
+        </h2>
+        <div
+          id="projectsContainer"
+          class="space-y-6"
+        ></div>
+      </section> -->
+
+      <!-- Skills -->
+      <section id="skills">
+        <h2
+          class="text-xl mb-4 border-b border-neutral-300 dark:border-neutral-700 pb-3"
+        >
+          Technical Skills
+        </h2>
+        <div
+          id="skillsContainer"
+          class="grid md:grid-cols-2 gap-6"
+        ></div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <h2
+          class="text-xl mb-4 border-b border-neutral-300 dark:border-neutral-700 pb-3"
+        >
+          Experience
+        </h2>
+        <div
+          id="experienceContainer"
+          class="space-y-3"
+        ></div>
+      </section>
+    </main>
+
+    <footer
+      class="mt-12 py-10 text-center text-xs text-neutral-500 dark:text-neutral-600"
+    >
+      © 2026 Kittipich Aiumbhornsin
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/i18n.js"></script>
+  </body>
+</html>
