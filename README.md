@@ -6,6 +6,10 @@ Personal Project: `LukeCreated` website
 
 site deployed at: **[lukecreated.com](https://lukecreated.com)** and **[www.lukecreated.com](https://www.lukecreated.com)**
 
+## Deprecations
+
+All versions below serie 5 are considerated to be deprecated and nop longer maintained.
+
 ## Technologies
 
 Current version of the website is built with plain HTML and JS. The upcoming version is being developed with Next.js
