@@ -13,10 +13,11 @@ Current version of the website is built with plain HTML and JS. The upcoming ver
 ## Local Run
 
 - To run the website locally, you need to have Flutter installed.
-- Following command will run the website locally on your machine and open with Google Chrome on port `5555`.
+- Following command will run the website locally on your machine and open with Google Chrome on port `3000`.
 
 ```bash
-flutter run -d chrome --web-port 5555
+cd serie5/lukecreated-web
+npm run dev
 ```
 
 ## Deployment
@@ -25,7 +26,7 @@ flutter run -d chrome --web-port 5555
 
 ```bash
 cd serie5/lukecreated-web
-npm run dev
+npm run build
 ```
 
 - commit and push to the repository.
