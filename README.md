@@ -8,13 +8,7 @@ site deployed at: **[lukecreated.com](https://lukecreated.com)** and **[www.luke
 
 ## Technologies
 
-Current version of the website is built with Flutter powered with dependencies:
-
-- flutter_svg
-- google_fonts
-- url_launcher
-- cached_network_image
-- intl
+Current version of the website is built with plain HTML and JS. The upcoming version is being developed with Next.js
 
 ## Local Run
 
@@ -30,9 +24,8 @@ flutter run -d chrome --web-port 5555
 - run following command for build:
 
 ```bash
-flutter clean
-flutter pub get
-flutter build web --release --output=deployment/web
+cd serie5/lukecreated-web
+npm run dev
 ```
 
 - commit and push to the repository.
